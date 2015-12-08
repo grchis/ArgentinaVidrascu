@@ -1,0 +1,203 @@
+<html ng-app="RinoplastieApp">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, maximum-scale=1">
+<title>Rinoplastie Cluj</title>
+<script type="text/javascript" src="js/wow.js"></script> 
+<script type="text/javascript" src="js/custom.js"></script>
+<script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+<link rel="icon" href="favicon.png" type="image/png">
+<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link href="css/style.css" rel="stylesheet" type="text/css"> 
+<link href="css/font-awesome.css" rel="stylesheet" type="text/css"> 
+<link href="css/animate.css" rel="stylesheet" type="text/css">
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-route/angular-route.js"></script>
+<script src="js/app.js"></script>
+<script src="js/controllers.js"></script> 
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/jquery-scrolltofixed.js"></script>
+<script type="text/javascript" src="js/jquery.nav.js"></script> 
+<script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
+<script type="text/javascript" src="js/jquery.isotope.js"></script>
+<script type="text/javascript" src="js/jssor.slider.min.js"></script>
+</head>
+<body>
+<!--Header_section-->
+<header id="header_wrapper">
+  <div class="container">
+    <div class="header_box">
+      <div class="logo"><a href="#"><img src="img/logo.png" alt="logo"></a></div>
+	  <nav class="navbar navbar-inverse" role="navigation">
+      <div class="navbar-header">
+        <button type="button" id="nav-toggle" class="navbar-toggle" data-toggle="collapse" data-target="#main-nav"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+        </div>
+	    <div id="main-nav" class="collapse navbar-collapse navStyle">
+			<ul class="nav navbar-nav" id="mainNav">
+			  <li><a href="./#/home" class="scroll-link">Home</a></li>
+			  <li><a href="./#/services" class="scroll-link">Services</a></li>
+			  <li><a href="./#/about" class="scroll-link">About Us</a></li>
+			  <li><a href="./#/contact" class="scroll-link">Contact</a></li>
+			  <li><a href="./#/indicatii" class="scroll-link">Indicatii generale</a></li>
+			</ul>
+      </div>
+	 </nav>
+    </div>
+  </div>
+</header>
+<!--Header_section--> 
+  <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="js/jssor.slider.mini.js"></script>
+    <!-- use jssor.slider.debug.js instead for debug -->
+    <script>
+        jQuery(document).ready(function ($) {
+            
+            var jssor_1_options = {
+              $AutoPlay: true,
+              $AutoPlaySteps: 4,
+              $SlideDuration: 160,
+              $SlideWidth: 200,
+              $SlideSpacing: 3,
+              $Cols: 4,
+              $ArrowNavigatorOptions: {
+                $Class: $JssorArrowNavigator$,
+                $Steps: 4
+              },
+              $BulletNavigatorOptions: {
+                $Class: $JssorBulletNavigator$,
+                $SpacingX: 1,
+                $SpacingY: 1
+              }
+            };
+            
+            var jssor_1_slider = new $JssorSlider$("jssor_1", jssor_1_options);
+            
+            //responsive code begin
+            //you can remove responsive code if you don't want the slider scales while window resizing
+            function ScaleSlider() {
+                var refSize = jssor_1_slider.$Elmt.parentNode.clientWidth;
+                if (refSize) {
+                    refSize = Math.min(refSize, 809);
+                    jssor_1_slider.$ScaleWidth(refSize);
+                }
+                else {
+                    window.setTimeout(ScaleSlider, 30);
+                }
+            }
+            ScaleSlider();
+            $(window).bind("load", ScaleSlider);
+            $(window).bind("resize", ScaleSlider);
+            $(window).bind("orientationchange", ScaleSlider);
+            //responsive code end
+        });
+    </script>
+
+    <style>
+        .jssorb03 {
+            position: absolute;
+        }
+        .jssorb03 div { background-position: -5px -4px; }
+        .jssorb03 div:hover, .jssorb03 .av:hover { background-position: -35px -4px; }
+        .jssorb03 .av { background-position: -65px -4px; }
+        .jssorb03 .dn, .jssorb03 .dn:hover { background-position: -95px -4px; }
+        .jssora03l { background-position: -3px -33px; }
+        .jssora03r { background-position: -63px -33px; }
+        .jssora03l:hover { background-position: -123px -33px; }
+        .jssora03r:hover { background-position: -183px -33px; }
+        .jssora03l.jssora03ldn { background-position: -243px -33px; }
+        .jssora03r.jssora03rdn { background-position: -303px -33px; }
+    </style>
+
+
+    <div id="jssor_1" style="position: relative; margin: 0 auto; top: 0px; left: 0px; width: 809px; height: 150px; overflow: hidden; visibility: hidden;">
+        <!-- Loading Screen -->
+        <div data-u="loading" style="position: absolute; top: 0px; left: 0px; width:100%;">
+            <div style="filter: alpha(opacity=70); opacity: 0.7; position: absolute; display: block; top: 0px; left: 0px; width: 100%; height: 100%;"></div>
+            <div style="position:absolute;display:block;background:url('img/loading.gif') no-repeat center center;top:0px;left:0px;width:100%;height:100%;"></div>
+        </div>
+        <div data-u="slides" style="cursor: default; position: fixed; top: 0px; left: 0px; width: 809px; height: 150px; overflow: hidden;">
+            <div style="display: none;">
+                <img data-u="image" src="img/005.jpg" />
+            </div>
+            <div style="display: none;">
+                <img data-u="image" src="img/006.jpg" />
+            </div>
+            <div style="display: none;">
+                <img data-u="image" src="img/011.jpg" />
+            </div>
+            <div style="display: none;">
+                <img data-u="image" src="img/013.jpg" />
+            </div>
+            <div style="display: none;">
+                <img data-u="image" src="img/014.jpg" />
+            </div>
+            <div style="display: none;">
+                <img data-u="image" src="img/019.jpg" />
+            </div>
+            <div style="display: none;">
+                <img data-u="image" src="img/020.jpg" />
+            </div>
+            <div style="display: none;">
+                <img data-u="image" src="img/021.jpg" />
+            </div>
+            <div style="display: none;">
+                <img data-u="image" src="img/022.jpg" />
+            </div>
+            <div style="display: none;">
+                <img data-u="image" src="img/024.jpg" />
+            </div>
+            <div style="display: none;">
+                <img data-u="image" src="img/025.jpg" />
+            </div>
+            <div style="display: none;">
+                <img data-u="image" src="img/027.jpg" />
+            </div>
+            <div style="display: none;">
+                <img data-u="image" src="img/029.jpg" />
+            </div>
+            <div style="display: none;">
+                <img data-u="image" src="img/030.jpg" />
+            </div>
+            <div style="display: none;">
+                <img data-u="image" src="img/031.jpg" />
+            </div>
+            <div style="display: none;">
+                <img data-u="image" src="img/030.jpg" />
+            </div>
+            <div style="display: none;">
+                <img data-u="image" src="img/034.jpg" />
+            </div>
+            <div style="display: none;">
+                <img data-u="image" src="img/038.jpg" />
+            </div>
+            <div style="display: none;">
+                <img data-u="image" src="img/039.jpg" />
+            </div>
+            <div style="display: none;">
+                <img data-u="image" src="img/043.jpg" />
+            </div>
+            <div style="display: none;">
+                <img data-u="image" src="img/044.jpg" />
+            </div>
+            <div style="display: none;">
+                <img data-u="image" src="img/047.jpg" />
+            </div>
+            <div style="display: none;">
+                <img data-u="image" src="img/050.jpg" />
+            </div>
+        </div>
+     </div>
+<ng-view>
+</ng-view>
+
+<footer class="footer_wrapper" id="contact">
+   <div class="container">
+    <div class="footer_bottom"><span>Argentina Vidrascu </span> </div>
+  </div>
+</footer>
+
+
+
+  </body>
+  
+</html>
