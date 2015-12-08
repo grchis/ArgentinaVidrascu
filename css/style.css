@@ -750,6 +750,10 @@ img {
 	background: url(../img/pattern.png);
     padding: 60px 0;
 }
+#home {
+	background: url(../img/pattern.png);
+    padding: 15px 0;
+}
 #contactUs {
 	background: url(../img/pattern.png);
     padding: 60px 0;

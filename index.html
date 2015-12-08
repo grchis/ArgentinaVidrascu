@@ -24,6 +24,7 @@
 </head>
 <body>
 <!--Header_section-->
+
 <header id="header_wrapper">
   <div class="container">
     <div class="header_box">
@@ -46,10 +47,23 @@
   </div>
 </header>
 <!--Header_section--> 
-  <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
-    <script type="text/javascript" src="js/jssor.slider.mini.js"></script>
-    <!-- use jssor.slider.debug.js instead for debug -->
-    <script>
+<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="js/jssor.slider.mini.js"></script>
+		    <script>	
+						var dir = "img/banner";
+						var fileextension = ".jpg";
+						$.ajax({
+						url: dir,
+						success: function (data) {
+						$(data).find("a:contains(" + fileextension + ")").each(function () {
+						var filename = this.href.replace(window.location.host, "").replace("http:///ArgentinaVidr/ArgentinaVidrascu", "");
+						var content="<div style='display: none;'>"+
+						"<img banner data-u='image' src='" + dir + filename + "'></img></div>";
+						debugger;
+						$("#jssorSlides").append($(content));
+					});
+											}
+										});			
         jQuery(document).ready(function ($) {
             
             var jssor_1_options = {
@@ -91,7 +105,7 @@
             //responsive code end
         });
     </script>
-
+   
     <style>
         .jssorb03 {
             position: absolute;
@@ -107,97 +121,29 @@
         .jssora03l.jssora03ldn { background-position: -243px -33px; }
         .jssora03r.jssora03rdn { background-position: -303px -33px; }
     </style>
-
-
     <div id="jssor_1" style="position: relative; margin: 0 auto; top: 0px; left: 0px; width: 809px; height: 150px; overflow: hidden; visibility: hidden;">
         <!-- Loading Screen -->
         <div data-u="loading" style="position: absolute; top: 0px; left: 0px; width:100%;">
             <div style="filter: alpha(opacity=70); opacity: 0.7; position: absolute; display: block; top: 0px; left: 0px; width: 100%; height: 100%;"></div>
             <div style="position:absolute;display:block;background:url('img/loading.gif') no-repeat center center;top:0px;left:0px;width:100%;height:100%;"></div>
         </div>
-        <div data-u="slides" style="cursor: default; position: fixed; top: 0px; left: 0px; width: 809px; height: 150px; overflow: hidden;">
+        <div id="jssorSlides"data-u="slides" style="cursor: default; position: fixed; top: 0px; left: 0px; width: 809px; height: 150px; overflow: hidden;">
             <div style="display: none;">
-                <img data-u="image" src="img/005.jpg" />
+                <img banner data-u="image" src="img/banner/1.jpg" />
             </div>
-            <div style="display: none;">
-                <img data-u="image" src="img/006.jpg" />
-            </div>
-            <div style="display: none;">
-                <img data-u="image" src="img/011.jpg" />
-            </div>
-            <div style="display: none;">
-                <img data-u="image" src="img/013.jpg" />
-            </div>
-            <div style="display: none;">
-                <img data-u="image" src="img/014.jpg" />
-            </div>
-            <div style="display: none;">
-                <img data-u="image" src="img/019.jpg" />
-            </div>
-            <div style="display: none;">
-                <img data-u="image" src="img/020.jpg" />
-            </div>
-            <div style="display: none;">
-                <img data-u="image" src="img/021.jpg" />
-            </div>
-            <div style="display: none;">
-                <img data-u="image" src="img/022.jpg" />
-            </div>
-            <div style="display: none;">
-                <img data-u="image" src="img/024.jpg" />
-            </div>
-            <div style="display: none;">
-                <img data-u="image" src="img/025.jpg" />
-            </div>
-            <div style="display: none;">
-                <img data-u="image" src="img/027.jpg" />
-            </div>
-            <div style="display: none;">
-                <img data-u="image" src="img/029.jpg" />
-            </div>
-            <div style="display: none;">
-                <img data-u="image" src="img/030.jpg" />
-            </div>
-            <div style="display: none;">
-                <img data-u="image" src="img/031.jpg" />
-            </div>
-            <div style="display: none;">
-                <img data-u="image" src="img/030.jpg" />
-            </div>
-            <div style="display: none;">
-                <img data-u="image" src="img/034.jpg" />
-            </div>
-            <div style="display: none;">
-                <img data-u="image" src="img/038.jpg" />
-            </div>
-            <div style="display: none;">
-                <img data-u="image" src="img/039.jpg" />
-            </div>
-            <div style="display: none;">
-                <img data-u="image" src="img/043.jpg" />
-            </div>
-            <div style="display: none;">
-                <img data-u="image" src="img/044.jpg" />
-            </div>
-            <div style="display: none;">
-                <img data-u="image" src="img/047.jpg" />
-            </div>
-            <div style="display: none;">
-                <img data-u="image" src="img/050.jpg" />
-            </div>
-        </div>
+		 </div>
      </div>
 <ng-view>
 </ng-view>
 
 <footer class="footer_wrapper" id="contact">
    <div class="container">
-    <div class="footer_bottom"><span>Argentina Vidrascu </span> </div>
+    <div class="footer_bottom">
+	<span><a href="http://www.chirurgieesteticacluj.ro">www.chirurgieesteticacluj.ro</a></span>
+	
+	</div>
   </div>
-</footer>
-
-
-
+</footer>    
   </body>
-  
-</html>
+ </html>
+

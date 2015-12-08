@@ -28,7 +28,7 @@ angular.module('RinoplastieApp', [ 'Rinoplastie.controllers', 'ngRoute' ]).confi
 				templateUrl : "partials/tip_nas/nasReoperat.html",
 				controller : ""
 			}).when("/indicatii", {
-				templateUrl : "partials/tip_nas/indicatiiGenerale.html",
+				templateUrl : "partials/indicatiiGenerale.html",
 				controller : ""
 			}).otherwise({
 				templateUrl : "partials/home.html"
