@@ -24,11 +24,9 @@
 </head>
 <body>
 <!--Header_section-->
-
 <header id="header_wrapper">
   <div class="container">
     <div class="header_box">
-      <div class="logo"><a href="#"><img src="img/logo.png" alt="logo"></a></div>
 	  <nav class="navbar navbar-inverse" role="navigation">
       <div class="navbar-header">
         <button type="button" id="nav-toggle" class="navbar-toggle" data-toggle="collapse" data-target="#main-nav"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
@@ -40,6 +38,7 @@
 			  <li><a href="./#/about" class="scroll-link">About Us</a></li>
 			  <li><a href="./#/contact" class="scroll-link">Contact</a></li>
 			  <li><a href="./#/indicatii" class="scroll-link">Indicatii generale</a></li>
+			  <li><a href="./#/interviuri" class="scroll-link">Interviuri</a></li>
 			</ul>
       </div>
 	 </nav>
@@ -47,23 +46,10 @@
   </div>
 </header>
 <!--Header_section--> 
-<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
-<script type="text/javascript" src="js/jssor.slider.mini.js"></script>
-		    <script>	
-						var dir = "img/banner";
-						var fileextension = ".jpg";
-						$.ajax({
-						url: dir,
-						success: function (data) {
-						$(data).find("a:contains(" + fileextension + ")").each(function () {
-						var filename = this.href.replace(window.location.host, "").replace("http:///ArgentinaVidr/ArgentinaVidrascu", "");
-						var content="<div style='display: none;'>"+
-						"<img banner data-u='image' src='" + dir + filename + "'></img></div>";
-						debugger;
-						$("#jssorSlides").append($(content));
-					});
-											}
-										});			
+  <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="js/jssor.slider.mini.js"></script>
+    <!-- use jssor.slider.debug.js instead for debug -->
+    <script>
         jQuery(document).ready(function ($) {
             
             var jssor_1_options = {
@@ -105,7 +91,7 @@
             //responsive code end
         });
     </script>
-   
+
     <style>
         .jssorb03 {
             position: absolute;
@@ -121,17 +107,61 @@
         .jssora03l.jssora03ldn { background-position: -243px -33px; }
         .jssora03r.jssora03rdn { background-position: -303px -33px; }
     </style>
+
+
     <div id="jssor_1" style="position: relative; margin: 0 auto; top: 0px; left: 0px; width: 809px; height: 150px; overflow: hidden; visibility: hidden;">
         <!-- Loading Screen -->
         <div data-u="loading" style="position: absolute; top: 0px; left: 0px; width:100%;">
             <div style="filter: alpha(opacity=70); opacity: 0.7; position: absolute; display: block; top: 0px; left: 0px; width: 100%; height: 100%;"></div>
             <div style="position:absolute;display:block;background:url('img/loading.gif') no-repeat center center;top:0px;left:0px;width:100%;height:100%;"></div>
         </div>
-        <div id="jssorSlides"data-u="slides" style="cursor: default; position: fixed; top: 0px; left: 0px; width: 809px; height: 150px; overflow: hidden;">
+        <div data-u="slides" style="cursor: default; position: fixed; top: 0px; left: 0px; width: 809px; height: 150px; overflow: hidden;">
             <div style="display: none;">
-                <img banner data-u="image" src="img/banner/1.jpg" />
+                <img/banner data-u="image" src="img/banner/1.jpg" />
             </div>
-		 </div>
+            <div style="display: none;">
+                <img/banner data-u="image" src="img/banner/2.jpg" />
+            </div>
+            <div style="display: none;">
+                <img/banner data-u="image" src="img/banner/3.jpg" />
+            </div>
+            <div style="display: none;">
+                <img/banner data-u="image" src="img/banner/4.jpg" />
+            </div>
+            <div style="display: none;">
+                <img/banner data-u="image" src="img/banner/5.jpg" />
+            </div>
+            <div style="display: none;">
+                <img/banner data-u="image" src="img/banner/6.jpg" />
+            </div>
+            <div style="display: none;">
+                <img/banner data-u="image" src="img/banner/7.jpg" />
+            </div>
+            <div style="display: none;">
+                <img/banner data-u="image" src="img/banner/8.jpg" />
+            </div>
+            <div style="display: none;">
+                <img/banner data-u="image" src="img/banner/9.jpg" />
+            </div>
+            <div style="display: none;">
+                <img/banner data-u="image" src="img/banner/10.jpg" />
+            </div>
+            <div style="display: none;">
+                <img/banner data-u="image" src="img/banner/11.jpg" />
+            </div>
+            <div style="display: none;">
+                <img/banner data-u="image" src="img/banner/12.jpg" />
+            </div>
+            <div style="display: none;">
+                <img/banner data-u="image" src="img/banner/13.jpg" />
+            </div>
+            <div style="display: none;">
+                <img/banner data-u="image" src="img/banner/14.jpg" />
+            </div>
+            <div style="display: none;">
+                <img/banner data-u="image" src="img/banner/15.jpg" />
+            </div>
+        </div>
      </div>
 <ng-view>
 </ng-view>
@@ -143,7 +173,10 @@
 	
 	</div>
   </div>
-</footer>    
-  </body>
- </html>
+</footer>
 
+
+
+  </body>
+  
+</html>

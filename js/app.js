@@ -30,6 +30,24 @@ angular.module('RinoplastieApp', [ 'Rinoplastie.controllers', 'ngRoute' ]).confi
 			}).when("/indicatii", {
 				templateUrl : "partials/indicatiiGenerale.html",
 				controller : ""
+			}).when("/interviuri", {
+				templateUrl : "partials/interviuriTv.html",
+				controller : ""
+			}).when("/articol1", {
+				templateUrl : "partials/articole/tratamentulMigreneiCuBotox.html",
+				controller : ""
+			}).when("/articol2", {
+				templateUrl : "partials/articole/mezobotox.html",
+				controller : ""
+			}).when("/articol3", {
+				templateUrl : "partials/articole/cercei.html",
+				controller : ""
+			}).when("/articol4", {
+				templateUrl : "partials/articole/implanturileMamare.html",
+				controller : ""
+			}).when("/articol5", {
+				templateUrl : "partials/articole/terapiaDePranz.html",
+				controller : ""
 			}).otherwise({
 				templateUrl : "partials/home.html"
 			});
