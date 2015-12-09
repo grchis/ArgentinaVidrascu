@@ -48,6 +48,12 @@ angular.module('RinoplastieApp', [ 'Rinoplastie.controllers', 'ngRoute' ]).confi
 			}).when("/articol5", {
 				templateUrl : "partials/articole/terapiaDePranz.html",
 				controller : ""
+			}).when("/articol6", {
+				templateUrl : "partials/articole/studiu.html",
+				controller : ""
+			}).when("/articol7", {
+				templateUrl : "partials/articole/ulcerGamba.html",
+				controller : ""
 			}).otherwise({
 				templateUrl : "partials/home.html"
 			});
