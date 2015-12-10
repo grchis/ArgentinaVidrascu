@@ -54,6 +54,51 @@ angular.module('RinoplastieApp', [ 'Rinoplastie.controllers', 'ngRoute' ]).confi
 			}).when("/articol7", {
 				templateUrl : "partials/articole/ulcerGamba.html",
 				controller : ""
+			}).when("/articol8", {
+				templateUrl : "partials/articole/articolGogol.html",
+				controller : ""
+			}).when("/articol9", {
+				templateUrl : "partials/articole/sculptra.html",
+				controller : ""
+			}).when("/articol10", {
+				templateUrl : "partials/articole/sforaitul.html",
+				controller : ""
+			}).when("/articol11", {
+				templateUrl : "partials/articole/botox.html",
+				controller : ""
+			}).when("/articol12", {
+				templateUrl : "partials/articole/riduri.html",
+				controller : ""
+			}).when("/diverse", {
+				templateUrl : "partials/diverse.html",
+				controller : ""
+			}).when("/interventie1", {
+				templateUrl : "partials/interventii/interventie1.html",
+				controller : ""
+			}).when("/interventie2", {
+				templateUrl : "partials/interventii/interventie2.html",
+				controller : ""
+			}).when("/interventie3", {
+				templateUrl : "partials/interventii/interventie3.html",
+				controller : ""
+			}).when("/interventie4", {
+				templateUrl : "partials/interventii/interventie4.html",
+				controller : ""
+			}).when("/interventie5", {
+				templateUrl : "partials/interventii/interventie5.html",
+				controller : ""
+			}).when("/interventie6", {
+				templateUrl : "partials/interventii/interventie6.html",
+				controller : ""
+			}).when("/interventie7", {
+				templateUrl : "partials/interventii/interventie7.html",
+				controller : ""
+			}).when("/interventie8", {
+				templateUrl : "partials/interventii/interventie8.html",
+				controller : ""
+			}).when("/interventie9", {
+				templateUrl : "partials/interventii/interventie9.html",
+				controller : ""
 			}).otherwise({
 				templateUrl : "partials/home.html"
 			});
