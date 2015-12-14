@@ -309,7 +309,7 @@ $app->get('/images', 'authenticate', function() {
 			continue;
 		}
 		$image = array();
-		$image['path'] = realpath($file->getPathname());
+		$image['path'] = $file->getPathname();
 		$image['filename'] = $file->getFilename();
 		array_push($response, $image);
 	}

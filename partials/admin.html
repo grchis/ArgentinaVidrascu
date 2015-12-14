@@ -15,6 +15,7 @@
 	<div>
 		<ul>
 		  <li ng-repeat="photo in allPhotos">
+			<img ng-src="{{photo.path}}" height="100" width="100"/>
 			{{photo.filename}} <button ng-click="deleteFile(photo.filename)">Delete</button>
 		  </li>
 		  <li ng-if="allPhotos.length == 0">
