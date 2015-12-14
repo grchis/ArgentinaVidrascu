@@ -99,6 +99,12 @@ angular.module('RinoplastieApp', [ 'Rinoplastie.controllers', 'ngRoute' ]).confi
 			}).when("/interventie9", {
 				templateUrl : "partials/interventii/interventie9.html",
 				controller : ""
+			}).when("/login", {
+				templateUrl : "partials/login.html",
+				controller : "loginController"
+			}).when("/admin", {
+			templateUrl : "partials/admin.html",
+			controller : "photosController"
 			}).otherwise({
 				templateUrl : "partials/home.html"
 			});
