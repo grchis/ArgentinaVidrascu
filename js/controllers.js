@@ -17,6 +17,7 @@ angular.module('Rinoplastie.controllers', ['ngCookies'])
 			$cookies.put('userEmail', $scope.user.email);
 			$cookies.put('userAuthToken', $scope.user.authToken);
 			$cookies.put('userCreatedAt', $scope.user.createdAt);
+			$cookies.put('userError', $scope.user.error);
 		})
 		.catch(function(response) {
 			$scope.user = response.data;
@@ -31,6 +32,7 @@ angular.module('Rinoplastie.controllers', ['ngCookies'])
 			$cookies.remove('userEmail');
 			$cookies.remove('userAuthToken');
 			$cookies.remove('userCreatedAt');
+			$cookies.remove('userError');
 		})
 		.catch(function(response){
 			
@@ -164,7 +166,7 @@ angular.module('Rinoplastie.controllers', ['ngCookies'])
 	
 	return this;
 }])
- 
+
 .directive('fileModel', ['$parse', function ($parse) {
     return {
         restrict: 'A',

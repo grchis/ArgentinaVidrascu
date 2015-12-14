@@ -1,4 +1,4 @@
-angular.module('RinoplastieApp', [ 'Rinoplastie.controllers', 'ngRoute' ]).config(
+angular.module('RinoplastieApp', [ 'Rinoplastie.controllers', 'ngRoute', 'pascalprecht.translate' ]).config(
 		[ '$routeProvider', function($routeProvider) {
 			$routeProvider.when("/home", {
 				templateUrl : "partials/home.html",
@@ -109,4 +109,25 @@ angular.module('RinoplastieApp', [ 'Rinoplastie.controllers', 'ngRoute' ]).confi
 				templateUrl : "partials/home.html"
 			});
 
-		} ]);
+		} ])
+.config(function($translateProvider){
+	$translateProvider.translations('ro', {
+		HOME: 'Acasa',
+		SERVICES: 'Servicii',
+		CV: 'CV',
+		CONTACT: 'Contact',
+		GENERAL_ADVICE: 'Indicatii generale',
+		INTERVIEWS: 'Interviuri',
+		INTERVENTIONS: 'Interventii'
+	 })
+	.translations('en', {
+		HOME: 'Home',
+		SERVICES: 'Services',
+		CV: 'CV',
+		CONTACT: 'Contact',
+		GENERAL_ADVICE: 'General advice',
+		INTERVIEWS: 'Interviews',
+		INTERVENTIONS: 'Interventions'
+	 });
+	 $translateProvider.preferredLanguage('ro');
+});
