@@ -167,6 +167,23 @@ angular.module('Rinoplastie.controllers', ['ngCookies'])
 	return this;
 }])
 
+.controller('translateController', ['$scope', '$cookies', '$translate', function($scope, $cookies, $translate){
+	
+	$scope.changeLanguage = function (langKey) {
+		$translate.use(langKey);
+		$cookies.put('lang', langKey);
+	};
+	
+	$scope.init = function() {
+		if ($cookies.get('lang') != null) {
+			$scope.changeLanguage($cookies.get('lang'));
+		}
+	};
+	
+	$scope.init();
+	
+}])
+
 .directive('fileModel', ['$parse', function ($parse) {
     return {
         restrict: 'A',
