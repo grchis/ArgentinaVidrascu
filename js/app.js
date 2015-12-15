@@ -118,7 +118,12 @@ angular.module('RinoplastieApp', [ 'Rinoplastie.controllers', 'ngRoute', 'pascal
 		CONTACT: 'Contact',
 		GENERAL_ADVICE: 'Indicatii generale',
 		INTERVIEWS: 'Interviuri',
-		INTERVENTIONS: 'Interventii'
+		INTERVENTIONS: 'Interventii',
+		CROOKED_NOSE: 'Nas Incovoiat',
+		GOGOL_NOSE: 'Nasul lui Gogol',
+		POSTTRAUMATIC_NOSE: 'Nas Posttraumatic',
+		REOPERATED_NOSE: 'Nas Reoperat',
+		CROOKED_NOSE_DETAILS: ''
 	 })
 	.translations('en', {
 		HOME: 'Home',
@@ -127,7 +132,12 @@ angular.module('RinoplastieApp', [ 'Rinoplastie.controllers', 'ngRoute', 'pascal
 		CONTACT: 'Contact',
 		GENERAL_ADVICE: 'General advice',
 		INTERVIEWS: 'Interviews',
-		INTERVENTIONS: 'Interventions'
+		INTERVENTIONS: 'Interventions',
+		CROOKED_NOSE: 'Crooked Nose',
+		GOGOL_NOSE: 'Gogol\'s Nose',
+		POSTTRAUMATIC_NOSE: 'Posttraumatic nose',
+		REOPERATED_NOSE: 'Re-operated nose',
+		CROOKED_NOSE_DETAILS: ''
 	 });
 	 $translateProvider.preferredLanguage('ro');
 });
