@@ -13,19 +13,16 @@ angular.module('RinoplastieApp', [ 'Rinoplastie.controllers', 'ngRoute', 'pascal
 				templateUrl : "partials/contact.html",
 				controller : ""
 			}).when("/incovoiat", {
-				templateUrl : "partials/tip_nas/nasIncovoiat.html",
+				templateUrl : "partials/tip_nas/nasIncovoiat.php",
 				controller : ""
 			}).when("/gogol", {
-				templateUrl : "partials/tip_nas/nasGogol.html",
-				controller : ""
-			}).when("/lung", {
-				templateUrl : "partials/tip_nas/nasLung.html",
+				templateUrl : "partials/tip_nas/nasGogol.php",
 				controller : ""
 			}).when("/posttraumatic", {
-				templateUrl : "partials/tip_nas/nasPosttraumatic.html",
+				templateUrl : "partials/tip_nas/nasPosttraumatic.php",
 				controller : ""
 			}).when("/reoperat", {
-				templateUrl : "partials/tip_nas/nasReoperat.html",
+				templateUrl : "partials/tip_nas/nasReoperat.php",
 				controller : ""
 			}).when("/indicatii", {
 				templateUrl : "partials/indicatiiGenerale.html",
@@ -73,43 +70,56 @@ angular.module('RinoplastieApp', [ 'Rinoplastie.controllers', 'ngRoute', 'pascal
 				templateUrl : "partials/diverse.html",
 				controller : ""
 			}).when("/interventie1", {
-				templateUrl : "partials/interventii/interventie1.html",
+				templateUrl : "partials/interventii/interventie1.php",
 				controller : ""
 			}).when("/interventie2", {
-				templateUrl : "partials/interventii/interventie2.html",
+				templateUrl : "partials/interventii/interventie2.php",
 				controller : ""
 			}).when("/interventie3", {
-				templateUrl : "partials/interventii/interventie3.html",
+				templateUrl : "partials/interventii/interventie3.php",
 				controller : ""
 			}).when("/interventie4", {
-				templateUrl : "partials/interventii/interventie4.html",
+				templateUrl : "partials/interventii/interventie4.php",
 				controller : ""
 			}).when("/interventie5", {
-				templateUrl : "partials/interventii/interventie5.html",
+				templateUrl : "partials/interventii/interventie5.php",
 				controller : ""
 			}).when("/interventie6", {
-				templateUrl : "partials/interventii/interventie6.html",
+				templateUrl : "partials/interventii/interventie6.php",
 				controller : ""
 			}).when("/interventie7", {
-				templateUrl : "partials/interventii/interventie7.html",
+				templateUrl : "partials/interventii/interventie7.php",
 				controller : ""
 			}).when("/interventie8", {
-				templateUrl : "partials/interventii/interventie8.html",
+				templateUrl : "partials/interventii/interventie8.php",
 				controller : ""
 			}).when("/interventie9", {
-				templateUrl : "partials/interventii/interventie9.html",
+				templateUrl : "partials/interventii/interventie9.php",
 				controller : ""
+			}).when("/login", {
+				templateUrl : "partials/login.html",
+				controller : "loginController"
+			}).when("/test", {
+				templateUrl : "partials/test.html",
+				controller : ""
+<<<<<<< HEAD
 			}).when("/login", {
 				templateUrl : "partials/login.html",
 				controller : "loginController"
 			}).when("/admin", {
 				templateUrl : "partials/admin.html",
 				controller : "adminController"
+=======
+			}).when("/admin", {
+			templateUrl : "partials/admin.html",
+			controller : "photosController"
+>>>>>>> final adjustmenrs
 			}).otherwise({
 				templateUrl : "partials/home.html"
 			});
 
 		} ])
+<<<<<<< HEAD
 		
 .run(function($rootScope, $location, $cookies) {
     $rootScope.$on( "$routeChangeStart", function(event, next, current) {
@@ -129,6 +139,8 @@ angular.module('RinoplastieApp', [ 'Rinoplastie.controllers', 'ngRoute', 'pascal
     });
 })
 		
+=======
+>>>>>>> final adjustmenrs
 .config(function($translateProvider){
 	$translateProvider.translations('ro', {
 		HOME: 'Acasa',
@@ -137,12 +149,16 @@ angular.module('RinoplastieApp', [ 'Rinoplastie.controllers', 'ngRoute', 'pascal
 		CONTACT: 'Contact',
 		GENERAL_ADVICE: 'Indicatii generale',
 		INTERVIEWS: 'Interviuri',
+<<<<<<< HEAD
 		INTERVENTIONS: 'Interventii',
 		CROOKED_NOSE: 'Nas Incovoiat',
 		GOGOL_NOSE: 'Nasul lui Gogol',
 		POSTTRAUMATIC_NOSE: 'Nas Posttraumatic',
 		REOPERATED_NOSE: 'Nas Reoperat',
 		CROOKED_NOSE_DETAILS: ''
+=======
+		INTERVENTIONS: 'Interventii'
+>>>>>>> final adjustmenrs
 	 })
 	.translations('en', {
 		HOME: 'Home',
@@ -151,6 +167,7 @@ angular.module('RinoplastieApp', [ 'Rinoplastie.controllers', 'ngRoute', 'pascal
 		CONTACT: 'Contact',
 		GENERAL_ADVICE: 'General advice',
 		INTERVIEWS: 'Interviews',
+<<<<<<< HEAD
 		INTERVENTIONS: 'Interventions',
 		CROOKED_NOSE: 'Crooked Nose',
 		GOGOL_NOSE: 'Gogol\'s Nose',
@@ -161,3 +178,9 @@ angular.module('RinoplastieApp', [ 'Rinoplastie.controllers', 'ngRoute', 'pascal
 	 $translateProvider.preferredLanguage('ro');
 });
 
+=======
+		INTERVENTIONS: 'Interventions'
+	 });
+	 $translateProvider.preferredLanguage('ro');
+});
+>>>>>>> final adjustmenrs

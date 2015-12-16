@@ -206,5 +206,4 @@ class DbHandler {
         return md5(uniqid(rand(), true));
     }
 }
- 
 ?>

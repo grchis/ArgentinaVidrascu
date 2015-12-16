@@ -1,20 +1,35 @@
 angular.module('Rinoplastie.controllers', ['ngCookies'])
 
+<<<<<<< HEAD
 .controller('loginController', ['$scope', '$rootScope', '$cookies', '$location', 'authService', function ($scope, $rootScope, $cookies, $location, loginSrv) {
+=======
+.controller('loginController', ['$scope', '$rootScope', '$cookies', 'authService', function ($scope, $rootScope, $cookies, loginSrv) {
+>>>>>>> final adjustmenrs
 	$scope.loginInfo;
 	$scope.user = {
 		'name' : $cookies.get('userName'),
 		'email' : $cookies.get('userEmail'),
 		'authToken' : $cookies.get('userAuthToken'),
 		'createdAt' : $cookies.get('userCreatedAt'),
+<<<<<<< HEAD
 		'error' : $cookies.get('userError')
+=======
+>>>>>>> final adjustmenrs
 	};
 
 	$scope.login = function () {
 		loginSrv.login($scope.loginInfo)
 		.then(function(response) {
 			$scope.user = response.data;
+<<<<<<< HEAD
 			$location.path('/admin');
+=======
+			$cookies.put('userName', $scope.user.name);
+			$cookies.put('userEmail', $scope.user.email);
+			$cookies.put('userAuthToken', $scope.user.authToken);
+			$cookies.put('userCreatedAt', $scope.user.createdAt);
+			$cookies.put('userError', $scope.user.error);
+>>>>>>> final adjustmenrs
 		})
 		.catch(function(response) {
 			$scope.user = response.data;
@@ -25,6 +40,7 @@ angular.module('Rinoplastie.controllers', ['ngCookies'])
 		loginSrv.logout($scope.user.authToken)
 		.then(function(response){
 			$scope.user = null;
+<<<<<<< HEAD
 			$location.path('/login');
 		})
 		.catch(function(response){
@@ -41,17 +57,44 @@ angular.module('Rinoplastie.controllers', ['ngCookies'])
 }])
  
 .factory('authService', ['$http', '$cookies', function($http, $cookies) {
+=======
+			$cookies.remove('userName');
+			$cookies.remove('userEmail');
+			$cookies.remove('userAuthToken');
+			$cookies.remove('userCreatedAt');
+			$cookies.remove('userError');
+		})
+		.catch(function(response){
+			
+		});
+		
+    };
+	
+	$scope.isUserLoggedIn = function () {
+		alert($scope.user != null && $scope.user.error != true);
+    };
+	
+	$scope.userInfo = function () {
+		alert(JSON.stringify($scope.user.authToken));
+    };
+}])
+ 
+.factory('authService', ['$http', function($http) {
+>>>>>>> final adjustmenrs
 	
 	var serviceBase = '/rinoplastie/v1';
    
 	this.login = function(loginInfo) {
 		var request = $http.post(serviceBase + '/login', loginInfo)
 		.success(function(data, status, headers, config) {
+<<<<<<< HEAD
 			$cookies.put('userName', data.name);
 			$cookies.put('userEmail', data.email);
 			$cookies.put('userAuthToken', data.authToken);
 			$cookies.put('userCreatedAt', data.createdAt);
 			$cookies.put('userError', data.error);
+=======
+>>>>>>> final adjustmenrs
 		})
 		.error(function(data, status, headers, config) {
 		});
@@ -63,11 +106,14 @@ angular.module('Rinoplastie.controllers', ['ngCookies'])
 			headers: {'Authorization': authToken}
 		});
 		request.success(function(data, status, headers, config) {
+<<<<<<< HEAD
 			$cookies.remove('userName');
 			$cookies.remove('userEmail');
 			$cookies.remove('userAuthToken');
 			$cookies.remove('userCreatedAt');
 			$cookies.remove('userError');
+=======
+>>>>>>> final adjustmenrs
 		});
 		request.error(function(data, status, headers, config) {
 		});
@@ -77,7 +123,11 @@ angular.module('Rinoplastie.controllers', ['ngCookies'])
    return this;
  }])
  
+<<<<<<< HEAD
 .controller('adminController', ['$scope', '$cookies', 'photoService', function($scope, $cookies, photoService){
+=======
+.controller('photosController', ['$scope', '$cookies', 'photoService', function($scope, $cookies, photoService){
+>>>>>>> final adjustmenrs
 	$scope.allPhotos;
 	
 	$scope.uploadFile = function(){
@@ -114,6 +164,10 @@ angular.module('Rinoplastie.controllers', ['ngCookies'])
 	};
 	
 	$scope.init();
+<<<<<<< HEAD
+=======
+	
+>>>>>>> final adjustmenrs
 }])
  
 .factory('photoService', ['$http', function ($http) {
@@ -167,6 +221,7 @@ angular.module('Rinoplastie.controllers', ['ngCookies'])
 	return this;
 }])
 
+<<<<<<< HEAD
 .controller('translateController', ['$scope', '$cookies', '$translate', function($scope, $cookies, $translate){
 	
 	$scope.changeLanguage = function (langKey) {
@@ -183,6 +238,8 @@ angular.module('Rinoplastie.controllers', ['ngCookies'])
 	$scope.init();
 }])
 
+=======
+>>>>>>> final adjustmenrs
 .directive('fileModel', ['$parse', function ($parse) {
     return {
         restrict: 'A',
