@@ -103,13 +103,32 @@ angular.module('RinoplastieApp', [ 'Rinoplastie.controllers', 'ngRoute', 'pascal
 				templateUrl : "partials/login.html",
 				controller : "loginController"
 			}).when("/admin", {
-			templateUrl : "partials/admin.html",
-			controller : "photosController"
+				templateUrl : "partials/admin.html",
+				controller : "adminController"
 			}).otherwise({
 				templateUrl : "partials/home.html"
 			});
 
 		} ])
+		
+.run(function($rootScope, $location, $cookies) {
+    $rootScope.$on( "$routeChangeStart", function(event, next, current) {
+		if ($rootScope.loggedInUser == null) {
+			// no logged user, redirect to /login
+			var isUserLoggedIn = !($cookies.get('userName') == null && ($cookies.get('userError') == null || ($cookies.get('userError') != null && $cookies.get('userError') != false)));
+			if (next.templateUrl === "partials/login.html" && isUserLoggedIn) {
+				$location.path("/admin");
+			}
+			else if (next.templateUrl === "partials/admin.html"  && !isUserLoggedIn) {
+				$location.path("/login");
+			}
+			else {
+				// do nothing
+			}
+		}
+    });
+})
+		
 .config(function($translateProvider){
 	$translateProvider.translations('ro', {
 		HOME: 'Acasa',
@@ -141,3 +160,4 @@ angular.module('RinoplastieApp', [ 'Rinoplastie.controllers', 'ngRoute', 'pascal
 	 });
 	 $translateProvider.preferredLanguage('ro');
 });
+
