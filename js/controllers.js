@@ -11,6 +11,7 @@ angular.module('Rinoplastie.controllers', ['ngCookies'])
 	};
 
 	$scope.login = function () {
+			$location.path('/admin');
 		loginSrv.login($scope.loginInfo)
 		.then(function(response) {
 			$scope.user = response.data;

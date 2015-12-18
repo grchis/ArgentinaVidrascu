@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ﻿<div ng-controller="loginController">
 	<button id="loginButton" class="btn" ng-click="logout()">Logout</button>
 </div>
@@ -27,30 +26,4 @@
 	  </li>
 	</ul>
 </div>
-=======
-﻿
-	<div>
-		<input type="file" file-model="before"/>
-		<input type="file" file-model="after"/>
-		<select ng-model="type">
-			<option value="gogol">Nasul lui Gogol</option>
-			<option value="incovoiat">Nas incovoiat</option>
-			<option value="lung">Nas lung</option>
-			<option value="posttraumatic">Nas posttraumatic</option>
-			<option value="reoperat">Nas reoperat</option>
-		</select>
-		<button ng-click="uploadFile()">Upload</button>
-	</div>
 
-	<div>
-		<ul>
-		  <li ng-repeat="photo in allPhotos">
-			<img ng-src="{{photo.path}}" height="100" width="100"/>
-			{{photo.filename}} <button ng-click="deleteFile(photo.filename)">Delete</button>
-		  </li>
-		  <li ng-if="allPhotos.length == 0">
-			<strong>No results found...</strong>
-		  </li>
-		</ul>
-	</div>
->>>>>>> final adjustmenrs
