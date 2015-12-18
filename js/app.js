@@ -102,24 +102,18 @@ angular.module('RinoplastieApp', [ 'Rinoplastie.controllers', 'ngRoute', 'pascal
 			}).when("/test", {
 				templateUrl : "partials/test.html",
 				controller : ""
-<<<<<<< HEAD
 			}).when("/login", {
 				templateUrl : "partials/login.html",
 				controller : "loginController"
 			}).when("/admin", {
 				templateUrl : "partials/admin.html",
 				controller : "adminController"
-=======
-			}).when("/admin", {
-			templateUrl : "partials/admin.html",
-			controller : "photosController"
->>>>>>> final adjustmenrs
 			}).otherwise({
 				templateUrl : "partials/home.html"
 			});
 
 		} ])
-<<<<<<< HEAD
+
 		
 .run(function($rootScope, $location, $cookies) {
     $rootScope.$on( "$routeChangeStart", function(event, next, current) {
@@ -138,9 +132,7 @@ angular.module('RinoplastieApp', [ 'Rinoplastie.controllers', 'ngRoute', 'pascal
 		}
     });
 })
-		
-=======
->>>>>>> final adjustmenrs
+
 .config(function($translateProvider){
 	$translateProvider.translations('ro', {
 		HOME: 'Acasa',
@@ -149,16 +141,12 @@ angular.module('RinoplastieApp', [ 'Rinoplastie.controllers', 'ngRoute', 'pascal
 		CONTACT: 'Contact',
 		GENERAL_ADVICE: 'Indicatii generale',
 		INTERVIEWS: 'Interviuri',
-<<<<<<< HEAD
 		INTERVENTIONS: 'Interventii',
 		CROOKED_NOSE: 'Nas Incovoiat',
 		GOGOL_NOSE: 'Nasul lui Gogol',
 		POSTTRAUMATIC_NOSE: 'Nas Posttraumatic',
 		REOPERATED_NOSE: 'Nas Reoperat',
 		CROOKED_NOSE_DETAILS: ''
-=======
-		INTERVENTIONS: 'Interventii'
->>>>>>> final adjustmenrs
 	 })
 	.translations('en', {
 		HOME: 'Home',
@@ -167,7 +155,6 @@ angular.module('RinoplastieApp', [ 'Rinoplastie.controllers', 'ngRoute', 'pascal
 		CONTACT: 'Contact',
 		GENERAL_ADVICE: 'General advice',
 		INTERVIEWS: 'Interviews',
-<<<<<<< HEAD
 		INTERVENTIONS: 'Interventions',
 		CROOKED_NOSE: 'Crooked Nose',
 		GOGOL_NOSE: 'Gogol\'s Nose',
@@ -177,10 +164,3 @@ angular.module('RinoplastieApp', [ 'Rinoplastie.controllers', 'ngRoute', 'pascal
 	 });
 	 $translateProvider.preferredLanguage('ro');
 });
-
-=======
-		INTERVENTIONS: 'Interventions'
-	 });
-	 $translateProvider.preferredLanguage('ro');
-});
->>>>>>> final adjustmenrs

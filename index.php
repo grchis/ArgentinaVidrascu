@@ -1,7 +1,5 @@
 <html ng-app="RinoplastieApp">
-
 <head>
-<<<<<<< HEAD:index.html
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, maximum-scale=1">
     <title>Rinoplastie Cluj</title>
@@ -25,29 +23,6 @@
     <script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
     <script type="text/javascript" src="js/jquery.isotope.js"></script>
     <script type="text/javascript" src="js/jssor.slider.min.js"></script>
-=======
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, maximum-scale=1">
-<title>Rinoplastie Cluj</title>
-<script type="text/javascript" src="js/wow.js"></script> 
-<script type="text/javascript" src="js/custom.js"></script>
-<script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
-<link rel="icon" href="favicon.png" type="image/png">
-<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
-<link href="css/font-awesome.css" rel="stylesheet" type="text/css"> 
-<link href="css/animate.css" rel="stylesheet" type="text/css">
-<script src="bower_components/angular/angular.js"></script>
-<script src="bower_components/angular-route/angular-route.js"></script>
-<script src="bower_components/angular-cookies/angular-cookies.js"></script>
-<script src="bower_components/angular-translate/angular-translate.js"></script>
-<script src="js/app.js"></script>
-<script src="js/controllers.js"></script> 
-<script type="text/javascript" src="js/bootstrap.min.js"></script>
-<script type="text/javascript" src="js/jquery-scrolltofixed.js"></script>
-<script type="text/javascript" src="js/jquery.nav.js"></script> 
-<script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
-<script type="text/javascript" src="js/jquery.isotope.js"></script>
-<script type="text/javascript" src="js/jssor.slider.min.js"></script>
  <script src="http://s.codepen.io/assets/libs/modernizr.js" type="text/javascript"></script>
    <link rel='stylesheet prefetch' href='http://tympanus.net/Development/Slicebox/css/demo.css'>
     <link rel="stylesheet" href="css/style.css">
@@ -55,7 +30,6 @@
 <script src='js/slicebox.js'></script>
 <script src="js/index.js"></script>
 <script src='http://tympanus.net/Development/Slicebox/js/jquery.slicebox.js'></script>
->>>>>>> final adjustmenrs:index.php
 </head>
 
 <body>
@@ -85,30 +59,8 @@
 				<button ng-click="changeLanguage('en')" translate="EN"></button>
 			</div>
         </div>
-<<<<<<< HEAD:index.html
-    </header>
-    <!--Header_section-->
-    <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
-=======
-	    <div id="main-nav" class="collapse navbar-collapse navStyle">
-			<ul class="nav navbar-nav" id="mainNav">
-			  <li><a href="./#/home" class="scroll-link">{{'HOME' | translate}}</a></li>
-			  <li><a href="./#/services" class="scroll-link">{{'SERVICES' | translate}}</a></li>
-			  <li><a href="./#/about" class="scroll-link">{{'CV' | translate}}</a></li>
-			  <li><a href="./#/contact" class="scroll-link">{{'CONTACT' | translate}}</a></li>
-			  <li><a href="./#/indicatii" class="scroll-link">{{'GENERAL_ADVICE' | translate}}</a></li>
-			  <li><a href="./#/interviuri" class="scroll-link">{{'INTERVIEWS' | translate}}</a></li>
-			   <li><a href="./#/diverse" class="scroll-link">{{'INTERVENTIONS' | translate}}</a></li>
-			</ul>
-      </div>
-	 </nav>
-    </div>
-  </div>
 </header>
 <!--Header_section--> 
->>>>>>> final adjustmenrs:index.php
-    <script type="text/javascript" src="js/jssor.slider.mini.js"></script>
-    <!-- use jssor.slider.debug.js instead for debug -->
     <script>
         jQuery(document).ready(function($) {
 
@@ -206,68 +158,6 @@
             <div style="position:absolute;display:block;background:url('img/loading.gif') no-repeat center center;top:0px;left:0px;width:100%;height:100%;"></div>
         </div>
         <div data-u="slides" style="cursor: default; position: fixed; top: 0px; left: 0px; width: 809px; height: 150px; overflow: hidden;">
-<<<<<<< HEAD:index.html
-            <div style="display: none;">
-                <img/banner data-u="image" src="img/banner/1.jpg" />
-            </div>
-            <div style="display: none;">
-                <img/banner data-u="image" src="img/banner/2.jpg" />
-            </div>
-            <div style="display: none;">
-                <img/banner data-u="image" src="img/banner/3.jpg" />
-            </div>
-            <div style="display: none;">
-                <img/banner data-u="image" src="img/banner/4.jpg" />
-            </div>
-            <div style="display: none;">
-                <img/banner data-u="image" src="img/banner/5.jpg" />
-            </div>
-            <div style="display: none;">
-                <img/banner data-u="image" src="img/banner/6.jpg" />
-            </div>
-            <div style="display: none;">
-                <img/banner data-u="image" src="img/banner/7.jpg" />
-            </div>
-            <div style="display: none;">
-                <img/banner data-u="image" src="img/banner/8.jpg" />
-            </div>
-            <div style="display: none;">
-                <img/banner data-u="image" src="img/banner/9.jpg" />
-            </div>
-            <div style="display: none;">
-                <img/banner data-u="image" src="img/banner/10.jpg" />
-            </div>
-            <div style="display: none;">
-                <img/banner data-u="image" src="img/banner/11.jpg" />
-            </div>
-            <div style="display: none;">
-                <img/banner data-u="image" src="img/banner/12.jpg" />
-            </div>
-            <div style="display: none;">
-                <img/banner data-u="image" src="img/banner/13.jpg" />
-            </div>
-            <div style="display: none;">
-                <img/banner data-u="image" src="img/banner/14.jpg" />
-            </div>
-            <div style="display: none;">
-                <img/banner data-u="image" src="img/banner/15.jpg" />
-            </div>
-        </div>
-    </div>
-    <ng-view>
-    </ng-view>
-
-    <footer class="footer_wrapper" id="contact">
-        <div class="container">
-            <div class="footer_bottom">
-                <span><a href="http://www.chirurgieesteticacluj.ro">www.chirurgieesteticacluj.ro</a></span>
-
-            </div>
-        </div>
-    </footer>
-</body>
-</html>
-=======
       		<?php
 			$directory = "partials/tip_nas/img/banner/";
 			$images = glob($directory . "*.jpg");
@@ -290,4 +180,3 @@
   </body>
   
 </html>
->>>>>>> final adjustmenrs:index.php
