@@ -345,7 +345,11 @@ $app->get('/images/:type', 'authenticate', function($type) {
 	$response = array();
 	global $images_folder;
 	
-	foreach(glob($images_folder. '/' . $type . '/*.*') as $file) {
+	$rii = new IteratorIterator(new DirectoryIterator($images_folder . '/' . $type));
+	foreach ($rii as $file) {
+		if ($file->isDir()){ 
+			continue;
+		}
 		$image = array();
 		$image['path'] = $file->getPathname();
 		$image['filename'] = $file->getFilename();

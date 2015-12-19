@@ -20,14 +20,79 @@
 </div>
 
 <div>
+	<h1>Banner</h1>
 	<ul>
-	  <li ng-repeat="photo in allPhotos">
+	  <li ng-repeat="photo in banner">
 		<img ng-src="{{photo.path}}" height="100" width="100"/>
 		{{photo.filename}} <button ng-click="deleteFile(photo.filename)">Delete</button>
 	  </li>
-	  <li ng-if="allPhotos.length == 0">
+	  <li ng-if="banner.length == 0">
 		<strong>No results found...</strong>
 	  </li>
 	</ul>
 </div>
 
+<div>
+	<h1>Gogol</h1>
+	<ul>
+	  <li ng-repeat="photo in gogol">
+		<img ng-src="{{photo.path}}" height="100" width="100"/>
+		{{photo.filename}} <button ng-click="deleteFile(photo.filename)">Delete</button>
+	  </li>
+	  <li ng-if="gogol.length == 0">
+		<strong>No results found...</strong>
+	  </li>
+	</ul>
+</div>
+
+<div>
+	<h1>Incovioat</h1>
+	<ul>
+	  <li ng-repeat="photo in incovoiat">
+		<img ng-src="{{photo.path}}" height="100" width="100"/>
+		{{photo.filename}} <button ng-click="deleteFile(photo.filename)">Delete</button>
+	  </li>
+	  <li ng-if="incovoiat.length == 0">
+		<strong>No results found...</strong>
+	  </li>
+	</ul>
+</div>
+
+<div>
+	<h1>Lung</h1>
+	<ul>
+	  <li ng-repeat="photo in lung">
+		<img ng-src="{{photo.path}}" height="100" width="100"/>
+		{{photo.filename}} <button ng-click="deleteFile(photo.filename)">Delete</button>
+	  </li>
+	  <li ng-if="lung.length == 0">
+		<strong>No results found...</strong>
+	  </li>
+	</ul>
+</div>
+
+<div>
+	<h1>Posttraumatic</h1>
+	<ul>
+	  <li ng-repeat="photo in posttraumatic">
+		<img ng-src="{{photo.path}}" height="100" width="100"/>
+		{{photo.filename}} <button ng-click="deleteFile(photo.filename)">Delete</button>
+	  </li>
+	  <li ng-if="posttraumatic.length == 0">
+		<strong>No results found...</strong>
+	  </li>
+	</ul>
+</div>
+
+<div>
+	<h1>Reoperat</h1>
+	<ul>
+	  <li ng-repeat="photo in reoperat">
+		<img ng-src="{{photo.path}}" height="100" width="100"/>
+		{{photo.filename}} <button ng-click="deleteFile(photo.filename)">Delete</button>
+	  </li>
+	  <li ng-if="reoperat.length == 0">
+		<strong>No results found...</strong>
+	  </li>
+	</ul>
+</div>

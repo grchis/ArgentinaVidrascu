@@ -103,6 +103,14 @@ angular.module('Rinoplastie.controllers', ['ngCookies'])
 .controller('adminController', ['$scope', '$cookies', 'photoService', function($scope, $cookies, photoService){
 	$scope.allPhotos;
 	
+	// names should be the same as image folder names
+	$scope.banner;
+	$scope.gogol;
+	$scope.incovoiat;
+	$scope.lung;
+	$scope.posttraumatic;
+	$scope.reoperat;
+	
 	$scope.uploadFile = function(){
 		var photo = {
 			'before': $scope.before,
@@ -115,7 +123,7 @@ angular.module('Rinoplastie.controllers', ['ngCookies'])
 	$scope.deleteFile = function(filename){
 		photoService.deletePhoto(filename, $cookies.get('userAuthToken'))
 		.then(function(response) {
-			$scope.getAllPhotos();
+			$scope.init();
 		})
 		.catch(function(response) {
 		});
@@ -131,9 +139,23 @@ angular.module('Rinoplastie.controllers', ['ngCookies'])
 		});
 	};
 	
+	$scope.getPhotosByType = function(type) {
+		photoService.getPhotosByType(type, $cookies.get('userAuthToken'))
+		.then(function(response) {
+			$scope[type] = response.data;
+		})
+		.catch(function(response) {
+			$scope[type] = response.data;
+		});
+	};
+	
 	$scope.init = function(){
-		$scope.getAllPhotos();
-		
+		$scope.getPhotosByType('banner');
+		$scope.getPhotosByType('gogol');
+		$scope.getPhotosByType('incovoiat');
+		$scope.getPhotosByType('lung');
+		$scope.getPhotosByType('posttraumatic');
+		$scope.getPhotosByType('reoperat');
 	};
 	
 	$scope.init();
@@ -178,6 +200,17 @@ angular.module('Rinoplastie.controllers', ['ngCookies'])
 	
 	this.getAllPhotos = function(authToken){
         var request = $http.get(serviceBase + '/images', {
+			headers: {'Authorization': authToken}
+		});
+		request.success(function(data, status, headers, config) {
+		});
+		request.error(function(data, status, headers, config) {
+		});
+		return request;
+	};
+	
+	this.getPhotosByType = function(type, authToken){
+        var request = $http.get(serviceBase + '/images/' + type, {
 			headers: {'Authorization': authToken}
 		});
 		request.success(function(data, status, headers, config) {
