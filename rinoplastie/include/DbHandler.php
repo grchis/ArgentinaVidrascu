@@ -69,27 +69,19 @@ class DbHandler {
     public function checkLogin($email, $password) {
         // fetching user by email
         $stmt = $this->conn->prepare("SELECT password_hash FROM users WHERE email = ?");
- 
         $stmt->bind_param("s", $email);
- 
         $stmt->execute();
- 
         $stmt->bind_result($password_hash);
- 
         $stmt->store_result();
  
         if ($stmt->num_rows > 0) {
             // Found user with the email
             // Now verify the password
- 
             $stmt->fetch();
- 
             $stmt->close();
  
             if (PassHash::check_password($password_hash, $password)) {
                 // User password is correct
-				$api_key = $this->generateApiKey();
-				$this->updateApiKey($api_key, $email);
                 return TRUE;
             } else {
                 // user password is incorrect
@@ -102,6 +94,46 @@ class DbHandler {
             return FALSE;
         }
     }
+	
+	public function changePassword($api_key, $email, $old_password, $new_password) {
+        // fetching user by email
+        $stmt = $this->conn->prepare("SELECT password_hash FROM users WHERE email = ? AND api_key = ?");
+        $stmt->bind_param("ss", $email, $api_key);
+        $stmt->execute();
+        $stmt->bind_result($password_hash);
+        $stmt->store_result();
+ 
+        if ($stmt->num_rows > 0) {
+            // Found user with the email
+            // Now verify the password
+ 
+            $stmt->fetch();
+            $stmt->close();
+ 
+            if (PassHash::check_password($password_hash, $old_password)) {
+                // User password is correct
+				$password_hash = PassHash::hash($new_password);
+				$update_stmt = $this->conn->prepare("UPDATE users SET password_hash = ? WHERE email = ?");
+				$update_stmt->bind_param("ss", $password_hash, $email);
+
+				$result = $update_stmt->execute();
+				$update_stmt->close();
+                return TRUE;
+            } else {
+                // user password is incorrect
+                return FALSE;
+            }
+        } else {
+            $stmt->close();
+ 
+            // user not existed with the email
+            return FALSE;
+        }
+    }
+	
+	public function updateUserApiKey($email) {
+		$this->updateApiKey($this->generateApiKey(), $email);
+	}
 	
 	private function updateApiKey($api_key, $email) {
 		$stmt = $this->conn->prepare("UPDATE users SET api_key = ? WHERE email = ?");

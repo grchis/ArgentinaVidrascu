@@ -76,37 +76,37 @@ function echoRespnse($status_code, $response) {
  * params - name, email, password
  */
 $app->post('/register', 'authenticate', function() use ($app) {
-            // check for required params
-            verifyRequiredParams(array('name', 'email', 'password'));
- 
-            $response = array();
- 
-            // reading post params
-			$params = json_decode($app->request()->getBody());
-            $name = $params->name;
-            $email = $params->email;
-            $password = $params->password;
- 
-            // validating email address
-            validateEmail($email);
- 
-            $db = new DbHandler();
-            $res = $db->createUser($name, $email, $password);
- 
-            if ($res == USER_CREATED_SUCCESSFULLY) {
-                $response["error"] = false;
-                $response["message"] = "You are successfully registered";
-                echoRespnse(201, $response);
-            } else if ($res == USER_CREATE_FAILED) {
-                $response["error"] = true;
-                $response["message"] = "Oops! An error occurred while registereing";
-                echoRespnse(200, $response);
-            } else if ($res == USER_ALREADY_EXISTED) {
-                $response["error"] = true;
-                $response["message"] = "Sorry, this email already exists";
-                echoRespnse(200, $response);
-            }
-        });
+	// check for required params
+	verifyRequiredParams(array('name', 'email', 'password'));
+
+	$response = array();
+
+	// reading post params
+	$params = json_decode($app->request()->getBody());
+	$name = $params->name;
+	$email = $params->email;
+	$password = $params->password;
+
+	// validating email address
+	validateEmail($email);
+
+	$db = new DbHandler();
+	$res = $db->createUser($name, $email, $password);
+
+	if ($res == USER_CREATED_SUCCESSFULLY) {
+		$response["error"] = false;
+		$response["message"] = "You are successfully registered";
+		echoRespnse(201, $response);
+	} else if ($res == USER_CREATE_FAILED) {
+		$response["error"] = true;
+		$response["message"] = "Oops! An error occurred while registereing";
+		echoRespnse(500, $response);
+	} else if ($res == USER_ALREADY_EXISTED) {
+		$response["error"] = true;
+		$response["message"] = "Sorry, this email already exists";
+		echoRespnse(400, $response);
+	}
+});
 		
 /**
  * User Login
@@ -115,56 +115,106 @@ $app->post('/register', 'authenticate', function() use ($app) {
  * params - email, password
  */
 $app->post('/login', function() use ($app) {
-            // check for required params
-            verifyRequiredParams(array('email', 'password'));
- 
-            // reading post params
-			$params = json_decode($app->request()->getBody());
-            $email = $params->email;
-            $password = $params->password;
-            $response = array();
- 
-            $db = new DbHandler();
-            // check for correct email and password
-            if ($db->checkLogin($email, $password)) {
-                // get the user by email
-                $user = $db->getUserByEmail($email);
- 
-                if ($user != NULL) {
-                    $response["error"] = false;
-                    $response['name'] = $user['name'];
-                    $response['email'] = $user['email'];
-                    $response['authToken'] = $user['api_key'];
-                    $response['createdAt'] = $user['created_at'];
-                } else {
-                    // unknown error occurred
-                    $response['error'] = true;
-                    $response['message'] = "An error occurred. Please try again";
-					echoRespnse(500, $response);
-					return;
-                }
-            } else {
-                // user credentials are wrong
-                $response['error'] = true;
-                $response['message'] = 'Login failed. Incorrect credentials';
-				echoRespnse(401, $response);
-				return;
-            }
- 
-            echoRespnse(200, $response);
-        });
+	// check for required params
+	verifyRequiredParams(array('email', 'password'));
+
+	// reading post params
+	$params = json_decode($app->request()->getBody());
+	$email = $params->email;
+	$password = $params->password;
+	$response = array();
+
+	$db = new DbHandler();
+	// check for correct email and password
+	if ($db->checkLogin($email, $password)) {
+		// get the user by email
+		$db->updateUserApiKey($email);
+		$user = $db->getUserByEmail($email);
+
+		if ($user != NULL) {
+			$response["error"] = false;
+			$response['name'] = $user['name'];
+			$response['email'] = $user['email'];
+			$response['authToken'] = $user['api_key'];
+			$response['createdAt'] = $user['created_at'];
+		} else {
+			// unknown error occurred
+			$response['error'] = true;
+			$response['message'] = "An error occurred. Please try again";
+			echoRespnse(500, $response);
+			return;
+		}
+	} else {
+		// user credentials are wrong
+		$response['error'] = true;
+		$response['message'] = 'Login failed. Incorrect credentials';
+		echoRespnse(401, $response);
+		return;
+	}
+
+	echoRespnse(200, $response);
+});
 		
 $app->get('/logout', 'authenticate', function() {
-            global $user_id;
-            $response = array();
-            $db = new DbHandler();
- 
-			$headers = apache_request_headers();
-			$api_key = $headers['Authorization'];
-            $result = $db->deleteApiKey($api_key);
-			
-            echoRespnse(204, $response);
-        });
+	global $user_id;
+	$response = array();
+	$db = new DbHandler();
+
+	$headers = apache_request_headers();
+	$api_key = $headers['Authorization'];
+	$result = $db->deleteApiKey($api_key);
+	
+	echoRespnse(204, $response);
+});
+
+$app->post('/changepassword', 'authenticate', function() use ($app) {
+	// check for required params
+	verifyRequiredParams(array('email', 'oldPassword', 'newPassword', 'confirmPassword'));
+
+	$headers = apache_request_headers();
+	$api_key = $headers['Authorization'];
+	
+	// reading post params
+	$params = json_decode($app->request()->getBody());
+	$email = $params->email;
+	$oldPassword = $params->oldPassword;
+	$newPassword = $params->newPassword;
+	$confirmPassword = $params->confirmPassword;
+	$response = array();
+	
+	if ($newPassword != $confirmPassword) {
+		$response['error'] = true;
+		$response['message'] = 'New password missmatch';
+		echoRespnse(400, $response);
+		return;
+	} else {
+		$db = new DbHandler();
+		// check for correct email and password
+		if ($db->checkLogin($email, $oldPassword)) {
+			// get the user by email
+			$user = $db->getUserByEmail($email);
+
+			if ($user != NULL) {
+				$db->changePassword($api_key, $user['email'], $oldPassword, $newPassword);
+			} else {
+				// unknown error occurred
+				$response['error'] = true;
+				$response['message'] = "An error occurred. Please try again";
+				echoRespnse(500, $response);
+				return;
+			}
+		} else {
+			// user credentials are wrong
+			$response['error'] = true;
+			$response['message'] = 'Change password failed. Incorrect old password';
+			echoRespnse(401, $response);
+			return;
+		}		
+	}
+	$response['error'] = false;
+	$response['message'] = "Password changed successfully";
+	echoRespnse(200, $response);
+});
 		
 		
 /**
@@ -176,6 +226,8 @@ function authenticate(\Slim\Route $route) {
     $headers = apache_request_headers();
     $response = array();
     $app = \Slim\Slim::getInstance();
+	//echo '<pre>';
+	//var_dump($headers);die;
  
     // Verifying Authorization Header
     if (isset($headers['Authorization'])) {
@@ -183,6 +235,7 @@ function authenticate(\Slim\Route $route) {
  
         // get the api key
         $api_key = $headers['Authorization'];
+		
         // validating api key
         if (!$db->isValidApiKey($api_key)) {
             // api key is not present in users table
@@ -216,7 +269,6 @@ $app->post('/upload', 'authenticate', function () {
 	$response = array();
 	$invalid = false;
 	$response["message"] = "";
-	//var_dump($_FILES);die;
     if (!isset($_FILES['before'])) {
 		$response["message"] = "No 'before' file selected for upload.";
         $invalid = true;
@@ -255,46 +307,49 @@ $app->post('/upload', 'authenticate', function () {
 
 function merge_images($img1_path, $img2_path, $img_type) {
 
-list($img1_width, $img1_height) = getimagesize($img1_path);
-list($img2_width, $img2_height) = getimagesize($img2_path);
+	list($img1_width, $img1_height) = getimagesize($img1_path);
+	list($img2_width, $img2_height) = getimagesize($img2_path);
 
-$merged_width  = $img1_width + $img2_width;
-//get highest
-$merged_height = $img1_height > $img2_height ? $img1_height : $img2_height;
+	$merged_width  = $img1_width + $img2_width;
+	//get highest
+	$merged_height = $img1_height > $img2_height ? $img1_height : $img2_height;
 
-$merged_image = imagecreatetruecolor($merged_width, $merged_height);
+	$merged_image = imagecreatetruecolor($merged_width, $merged_height);
 
-imagealphablending($merged_image, false);
-imagesavealpha($merged_image, true);
+	imagealphablending($merged_image, false);
+	imagesavealpha($merged_image, true);
 
-$img1 = imagecreatefromjpeg($img1_path);
-$img2 = imagecreatefromjpeg($img2_path);
+	$img1 = imagecreatefromjpeg($img1_path);
+	$img2 = imagecreatefromjpeg($img2_path);
 
-imagecopy($merged_image, $img1, 0, 0, 0, 0, $img1_width, $img1_height);
-//place at right side of $img1
-imagecopy($merged_image, $img2, $img1_width, 0, 0, 0, $img2_width, $img2_height);
+	imagecopy($merged_image, $img1, 0, 0, 0, 0, $img1_width, $img1_height);
+	//place at right side of $img1
+	imagecopy($merged_image, $img2, $img1_width, 0, 0, 0, $img2_width, $img2_height);
 
-//save file or output to broswer
-$SAVE_AS_FILE = true;
-if( $SAVE_AS_FILE ){
-	$name = uniqid($img_type.'-'.date('Ymdhis').'-');
-    $save_path = '../../img/' . $img_type . "/" . $name . '.jpg';
-    imagejpeg($merged_image,$save_path);
-}else{
-    header('Content-Type: image/jpeg');
-    imagejpeg($merged_image);
+	//save file or output to broswer
+	$SAVE_AS_FILE = true;
+	if( $SAVE_AS_FILE ){
+		$name = uniqid($img_type.'-'.date('Ymdhis').'-');
+		$save_path = '../../img/' . $img_type . "/" . $name . '.jpg';
+		imagejpeg($merged_image,$save_path);
+	} else {
+		header('Content-Type: image/jpeg');
+		imagejpeg($merged_image);
+	}
+
+	//release memory
+	imagedestroy($merged_image);
 }
 
-//release memory
-imagedestroy($merged_image);
-}
-
-$app->get('/images/:type', function($type) {
+$app->get('/images/:type', 'authenticate', function($type) {
 	$response = array();
 	global $images_folder;
 	
 	foreach(glob($images_folder. '/' . $type . '/*.*') as $file) {
-		array_push($response, $file);
+		$image = array();
+		$image['path'] = $file->getPathname();
+		$image['filename'] = $file->getFilename();
+		array_push($response, $image);
 	}
 	echoRespnse(200, $response);
 });

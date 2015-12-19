@@ -2,6 +2,8 @@ angular.module('Rinoplastie.controllers', ['ngCookies'])
 
 .controller('loginController', ['$scope', '$rootScope', '$cookies', '$location', 'authService', function ($scope, $rootScope, $cookies, $location, loginSrv) {
 	$scope.loginInfo;
+	$scope.changePasswordInfo;
+	
 	$scope.user = {
 		'name' : $cookies.get('userName'),
 		'email' : $cookies.get('userEmail'),
@@ -11,7 +13,7 @@ angular.module('Rinoplastie.controllers', ['ngCookies'])
 	};
 
 	$scope.login = function () {
-			$location.path('/admin');
+		$location.path('/admin');
 		loginSrv.login($scope.loginInfo)
 		.then(function(response) {
 			$scope.user = response.data;
@@ -19,6 +21,14 @@ angular.module('Rinoplastie.controllers', ['ngCookies'])
 		})
 		.catch(function(response) {
 			$scope.user = response.data;
+		});
+    };
+	
+	$scope.changePassword = function () {
+		loginSrv.changePassword($scope.changePasswordInfo, $cookies.get('userAuthToken'))
+		.then(function(response) {
+		})
+		.catch(function(response) {
 		});
     };
 	
@@ -53,6 +63,18 @@ angular.module('Rinoplastie.controllers', ['ngCookies'])
 			$cookies.put('userAuthToken', data.authToken);
 			$cookies.put('userCreatedAt', data.createdAt);
 			$cookies.put('userError', data.error);
+		})
+		.error(function(data, status, headers, config) {
+		});
+		return request;
+    };
+	
+	this.changePassword = function(changePasswordInfo, authToken) {
+		changePasswordInfo.email = $cookies.get('userEmail');
+		var request = $http.post(serviceBase + '/changepassword', changePasswordInfo, {
+			headers: {'Authorization': authToken}
+			})
+		.success(function(data, status, headers, config) {
 		})
 		.error(function(data, status, headers, config) {
 		});

@@ -1,5 +1,9 @@
 ﻿<div ng-controller="loginController">
-	<button id="loginButton" class="btn" ng-click="logout()">Logout</button>
+	<input type="password" class="form-control" placeholder="Old password" ng-model="changePasswordInfo.oldPassword" placeholder="password" required />
+	<input type="password" class="form-control" placeholder="New password" ng-model="changePasswordInfo.newPassword" placeholder="password" required />
+	<input type="password" class="form-control" placeholder="Confirm new password" ng-model="changePasswordInfo.confirmPassword" placeholder="password" required />
+	<button id="changePasswordButton" class="btn" ng-click="changePassword()">Change Password</button>
+	<button id="logoutButton" class="btn" ng-click="logout()">Logout</button>
 </div>
 
 <div>
