@@ -99,14 +99,17 @@ angular.module('RinoplastieApp', [ 'Rinoplastie.controllers', 'ngRoute', 'pascal
 			}).when("/login", {
 				templateUrl : "partials/login.html",
 				controller : "loginController"
-			}).when("/test", {
-				templateUrl : "partials/test.html",
-				controller : ""
-			}).when("/login", {
-				templateUrl : "partials/login.html",
-				controller : "loginController"
 			}).when("/admin", {
 				templateUrl : "partials/admin.html",
+				controller : "adminController"
+			}).when("/all", {
+				templateUrl : "partials/admin_partials/all_photos.html",
+				controller : "adminController"
+			}).when("/upload", {
+				templateUrl : "partials/admin_partials/upload.html",
+				controller : "adminController"
+			}).when("/change", {
+				templateUrl : "partials/admin_partials/changePass.html",
 				controller : "adminController"
 			}).otherwise({
 				templateUrl : "partials/home.html"

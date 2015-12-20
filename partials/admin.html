@@ -1,98 +1,39 @@
-﻿<div ng-controller="loginController">
-	<input type="password" class="form-control" placeholder="Old password" ng-model="changePasswordInfo.oldPassword" placeholder="password" required />
-	<input type="password" class="form-control" placeholder="New password" ng-model="changePasswordInfo.newPassword" placeholder="password" required />
-	<input type="password" class="form-control" placeholder="Confirm new password" ng-model="changePasswordInfo.confirmPassword" placeholder="password" required />
-	<button id="changePasswordButton" class="btn" ng-click="changePassword()">Change Password</button>
-	<button id="logoutButton" class="btn" ng-click="logout()">Logout</button>
-</div>
+<!--Service-->
+<section  id="service">
+  <div class="container" ng-controller="loginController">
+   	<button id="logoutButton" class="btn" style="float:right;" ng-click="logout()">Logout</button>
+    <h2>Welcome Argentina Vidrascu</h2>
+    <div class="service_wrapper">
 
-<div>
-	<input type="file" file-model="before"/>
-	<input type="file" file-model="after"/>
-	<select ng-model="type">
-		<option value="gogol">Nasul lui Gogol</option>
-		<option value="incovoiat">Nas incovoiat</option>
-		<option value="lung">Nas lung</option>
-		<option value="posttraumatic">Nas posttraumatic</option>
-		<option value="reoperat">Nas reoperat</option>
-	</select>
-	<button ng-click="uploadFile()">Upload</button>
-</div>
+      <div class="row">
+        <div class="col-lg-4">
+          <div class="service_block">
+			<a href="./#/change">
+					<div class="service_icon delay-03s animated wow  zoomIn"> <span><img src="img/key.png"/></span> </div>
+					<h3 class="animated fadeInUp wow">Change Password</h3>
+			</a>
 
-<div>
-	<h1>Banner</h1>
-	<ul>
-	  <li ng-repeat="photo in banner">
-		<img ng-src="{{photo.path}}" height="100" width="100"/>
-		{{photo.filename}} <button ng-click="deleteFile(photo.filename)">Delete</button>
-	  </li>
-	  <li ng-if="banner.length == 0">
-		<strong>No results found...</strong>
-	  </li>
-	</ul>
-</div>
-
-<div>
-	<h1>Gogol</h1>
-	<ul>
-	  <li ng-repeat="photo in gogol">
-		<img ng-src="{{photo.path}}" height="100" width="100"/>
-		{{photo.filename}} <button ng-click="deleteFile(photo.filename)">Delete</button>
-	  </li>
-	  <li ng-if="gogol.length == 0">
-		<strong>No results found...</strong>
-	  </li>
-	</ul>
-</div>
-
-<div>
-	<h1>Incovioat</h1>
-	<ul>
-	  <li ng-repeat="photo in incovoiat">
-		<img ng-src="{{photo.path}}" height="100" width="100"/>
-		{{photo.filename}} <button ng-click="deleteFile(photo.filename)">Delete</button>
-	  </li>
-	  <li ng-if="incovoiat.length == 0">
-		<strong>No results found...</strong>
-	  </li>
-	</ul>
-</div>
-
-<div>
-	<h1>Lung</h1>
-	<ul>
-	  <li ng-repeat="photo in lung">
-		<img ng-src="{{photo.path}}" height="100" width="100"/>
-		{{photo.filename}} <button ng-click="deleteFile(photo.filename)">Delete</button>
-	  </li>
-	  <li ng-if="lung.length == 0">
-		<strong>No results found...</strong>
-	  </li>
-	</ul>
-</div>
-
-<div>
-	<h1>Posttraumatic</h1>
-	<ul>
-	  <li ng-repeat="photo in posttraumatic">
-		<img ng-src="{{photo.path}}" height="100" width="100"/>
-		{{photo.filename}} <button ng-click="deleteFile(photo.filename)">Delete</button>
-	  </li>
-	  <li ng-if="posttraumatic.length == 0">
-		<strong>No results found...</strong>
-	  </li>
-	</ul>
-</div>
-
-<div>
-	<h1>Reoperat</h1>
-	<ul>
-	  <li ng-repeat="photo in reoperat">
-		<img ng-src="{{photo.path}}" height="100" width="100"/>
-		{{photo.filename}} <button ng-click="deleteFile(photo.filename)">Delete</button>
-	  </li>
-	  <li ng-if="reoperat.length == 0">
-		<strong>No results found...</strong>
-	  </li>
-	</ul>
-</div>
+		  </div>
+        </div>
+        <div class="col-lg-4 borderLeft">			
+          <div class="service_block">
+		  	<a href="./#/all">
+				<div class="service_icon icon2  delay-03s animated wow zoomIn"> <span><img src="img/allphotos.png"/></span> </div>
+				<h3 class="animated fadeInUp wow">View All Photos</h3>
+            </a>
+		</div>
+        </div>
+		<div class="col-lg-4 borderLeft">			
+          <div class="service_block">
+			<a href="./#/upload">
+				<div class="service_icon icon2  delay-03s animated wow zoomIn"> <span><img src="img/uploadImg.png"/></span> </div>
+				<h3 class="animated fadeInUp wow">Upload Photos</h3>
+            </a>
+			</a>
+		  </div>
+        </div>
+      </div><br/>
+	  </div>
+  </div>
+</section>
+<!--Service-->

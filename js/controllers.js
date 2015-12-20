@@ -75,8 +75,10 @@ angular.module('Rinoplastie.controllers', ['ngCookies'])
 			headers: {'Authorization': authToken}
 			})
 		.success(function(data, status, headers, config) {
+			alert("Password successfully changed");
 		})
 		.error(function(data, status, headers, config) {
+			alert("An error occured. Please fill the fields with correct info");
 		});
 		return request;
     };
@@ -178,8 +180,12 @@ angular.module('Rinoplastie.controllers', ['ngCookies'])
 			}
         })
         .success(function(){
+			alert("Sucessfully uploaded");
+			window.location.href="./#/admin";
         })
         .error(function(){
+			alert("Unexpected Error!");
+			window.location.href="./#/admin";
         });
     };
 	
