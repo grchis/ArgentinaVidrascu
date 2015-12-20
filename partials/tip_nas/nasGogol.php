@@ -1,7 +1,7 @@
 <section id="aboutUs"><!--Aboutus-->
 <div class="inner_wrapper">
   <div class="container">
-  <h2>Nasul lui Gogol</h2><br/> 
+  <h2>{{'GOGOL_NOSE' | translate}}</h2><br/> 
     <div class="inner_section">
 	<div class="row">
       <div class=" col-lg-4 col-md-4 col-sm-4 col-xs-12 pull-right">
@@ -9,37 +9,7 @@
 </div>	  
       	<div class=" col-lg-7 col-md-7 col-sm-7 col-xs-12 pull-left">
         	<div class=" delay-01s animated fadeInDown wow animated">
-			<p>
-					Acest tip de nas reprezinta combinatia dintre nasul lung si cel
-					incovoiat ( hispanic). In acest caz marimea curburii dorsale este
-					mult mai mare si include atat partea osoasa cat si
-					cartilaginoasa.
-				</p>
-				<p>
-					Oasele nazale se reduc in inaltime cu dalta si lovituri usoare
-					de ciocan, cu pile de diferite dimensiuni ale asperitatilor, se
-					fractureaza ,cu dalta fina,&nbsp; lateral si superior si se
-					repozitioneaza pe linia de mijloc piramida nazala.
-				</p>
-				<p>
-					Se reduc in inaltime septul si cartilajele superioare alare
-					astfel încat dorsul nasului sa devina o linie dreapta la
-					barbati&nbsp; si usor curba la femei. In acest moment operator,
-					chirurgul se asigura ca nu raman denivelari si ca piramida nazala
-					ia o forma armonioasa.
-				</p>
-				<p>
-					Unghiul dintre frunte si nas se&nbsp; corecteaza cu bucati&nbsp;
-					de cartilaj ( grefe) inserate aici sub piele.
-				</p>
-				<p>
-					Vârful nasului e ridicat, cat e necesar, cu ajutorul inciziilor
-					si a suturilor specifice.
-				</p>
-				<p>
-					E foarte important sa fie rectificata, in acelasi timp operator,	
-					si deviatia de sept.
-				</p>
+			<p ng-bind-html="'GOGOL_NOSE_DETAILS' | translate"></p>
 			</div>
 		</div>
   </div>

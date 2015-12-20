@@ -1,7 +1,7 @@
 <section id="aboutUs"><!--Aboutus-->
 <div class="inner_wrapper">
   <div class="container">
-    <h2>Nas Posttraumatic</h2>
+    <h2>{{'POSTTRAUMATIC_NOSE' | translate}}</h2>
     <div class="inner_section">
 	<div class="row">
       <div class=" col-lg-4 col-md-4 col-sm-4 col-xs-12 pull-right">
@@ -9,48 +9,7 @@
 	   </div>
       	<div class=" col-lg-7 col-md-8 col-xs-12 pull-left">
         	<div class=" delay-01s animated fadeInDown wow animated">
-			<p>
-				Este important ca deviatia de sept postraumatica sau congenitala
-				sa fie corectata (septoplastia) concomitent cu piramida nazala
-				(rhinoplastia).
-			</p>
-				<p>
-					Interventia poate fi facuta in regim de urgenta. E de preferat,
-					deoarece, se pot rearanja oasele si septul, astfel incat sa nu
-					ramana deviate.
-				</p>
-				<p>
-					INSA, in&nbsp; aproape toate cazurile, rhinoplastia
-					posttraumatica are loc la mult timp dupa traumatism.
-				</p>
-				<p>
-					Pot fi&nbsp; deviate: oasele nazale/ cartilajele/ ambele.
-				</p>
-				<p>
-					Corectarea unui nas posttraumatic este posibila DOAR daca se
-					face concomitent si corectia septului deviat dupa traumatism si
-					fracturarea cu repozitionarea oaselor nazale.&nbsp; Septoplastia si
-					rhinoplastia de corectie sunt efectuate, de obicei, de catre
-					chirurgi antrenati in acest domeniu al chirurgiei plastice.
-				</p>
-				<p>
-					Reconstructia unui nas postraumatic necesita recoltarea
-					materialului&nbsp; cartilaginos de la nivelul: cartilajului
-					septal,auricular sau costal.
-				</p>
-				<p>
-					Alte materiale necesare pentru nivelarea dorsum-ului nazal pot
-					fi: fascia temporala,&nbsp; materiale bilogice ( fascia lata)
-					recoltate si dezinfectate de la cadavru sau&nbsp; plase sintetice.
-					Cel mai indicat este folosirea cartilajului septal al pacientului.
-					Prin urmare, este foarte important ca septul sa NU fi fost operat
-					in alt timp operator in cadrul serviciului ORL .
-				</p>
-				<p>
-					E foarte important sa fie rectificata, in acelasi timp operator,
-					si deviatia de sept.
-				</p>
-						
+			<p ng-bind-html="'POSTTRAUMATIC_NOSE_DETAILS' | translate"></p>
 			</div>
 		</div>
   </div>

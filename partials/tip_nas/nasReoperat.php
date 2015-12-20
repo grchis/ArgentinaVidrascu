@@ -1,27 +1,10 @@
 <section id="aboutUs"><!--Aboutus-->
 <div class="inner_wrapper">
   <div class="container">
-    <h2>Nas Reoperat</h2>
+    <h2>{{'REOPERATED_NOSE' | translate}}</h2>
 	<div style="align:center;">
         	<div class=" delay-01s animated fadeInDown wow animated">
-				<p>
-					In aceste situa?ii, complexe din punct de vedere reconstructiv,
-					se va lua in considerare posibilitatea de a recolta cartilaj de la
-					nivelul septului nazal, urechilor sau coastei pentru a dispune de
-					material hialin cu care sa fie reconstruite, dupa caz, aripile
-					nazale, varful, partea dorsala cartilaginoasa a piramidei
-					nazale.
-				</p>
-				<p>
-					Rinoplastia se repeta in cazurile in care la primele operatii
-					s-au efectuat doar modificarile osoase si de varf fara corectia
-					septului si a portiunii dorsale a cartilajelor care formeaza corpul
-					piramidei nazale.
-				</p>
-				<p>
-					E foarte important sa fie rectificata, in acelasi timp operator,
-					si deviatia de sept.
-				</p>
+				<p ng-bind-html="'REOPERATED_NOSE_DETAILS' | translate"></p>
 			</div>
 		</div>
   </div><br/>
