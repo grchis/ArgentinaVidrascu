@@ -55,9 +55,9 @@
                     </div>
                 </nav>
             </div>
-			<div ng-controller="translateController">
-				<button ng-click="changeLanguage('ro')" translate="RO"></button>
-				<button ng-click="changeLanguage('en')" translate="EN"></button>
+			<div ng-controller="translateController" style="float:right;">
+				<button style='background-color:transparent;width:20px;height:11px; background-image:url(../img/icon_ro.gif) ; background-repeat: no-repeat;color: transparent;"'ng-click="changeLanguage('ro')" translate="RO"></button>
+				<button style='background-color:transparent; width:20px;height:11px;background-image:url(../img/icon_en.gif) ; background-repeat: no-repeat;color: transparent;"' ng-click="changeLanguage('en')" translate="EN"></button>
 			</div>
         </div>
 </header>

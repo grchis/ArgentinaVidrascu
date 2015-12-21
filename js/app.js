@@ -111,6 +111,12 @@ angular.module('RinoplastieApp', [ 'Rinoplastie.controllers', 'ngRoute', 'pascal
 			}).when("/change", {
 				templateUrl : "partials/admin_partials/changePass.html",
 				controller : "adminController"
+			}).when("/misiuni", {
+				templateUrl : "partials/interventii/misiuni_umanitare.php",
+				controller : "adminController"
+			}).when("/oferte", {
+				templateUrl : "partials/oferte.php",
+				controller : "adminController"
 			}).otherwise({
 				templateUrl : "partials/home.html"
 			});
