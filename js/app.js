@@ -129,6 +129,15 @@ angular.module('RinoplastieApp', [ 'Rinoplastie.controllers', 'ngRoute', 'pascal
 			else if (next.templateUrl === "partials/admin.html"  && !isUserLoggedIn) {
 				$location.path("/login");
 			}
+			else if (next.templateUrl === "partials/admin_partials/all_photos.html"  && !isUserLoggedIn) {
+				$location.path("/login");
+			}
+			else if (next.templateUrl === "partials/admin_partials/changePass.html"  && !isUserLoggedIn) {
+				$location.path("/login");
+			}
+			else if (next.templateUrl === "partials/admin_partials/upload.html"  && !isUserLoggedIn) {
+				$location.path("/login");
+			}
 			else {
 				// do nothing
 			}
