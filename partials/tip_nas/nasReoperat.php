@@ -12,11 +12,11 @@
   <div class="wrapper">
     <ul id="sb-slider" class="sb-slider">
       		<?php
-			$directory = 'img/reoperat/';
+			$directory = '../../img/reoperat/';
 			$images = glob($directory . "*.jpg");
 			foreach($images as $image)
 			{
-			  echo '<li><img src="'.$image.'" alt="image1" style="width:100%;height:35%;"/></a><div class="sb-description"><h3>Argentina Vidrascu</h3></div></li>';
+			  echo '<li><img src="'.$image.'" alt="image1" style="width:100%;height:50%;"/></a><div class="sb-description"><h3>Argentina Vidrascu</h3></div></li>';
 			}
 ?>
    </ul>	

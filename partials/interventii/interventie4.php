@@ -67,22 +67,47 @@ Restylane dureaza: 20 min</em></li>
 
 	   </div>  	
       </div>
-	  	   <div class=" col-lg-4 col-md-4 col-sm-4 col-xs-12 pull-right">
+ <div class=" col-lg-4 col-md-4 col-sm-4 col-xs-12 pull-right">
+ <p>
 	  <p><strong>Citeste mai mult despre: </strong></p>
-	  <p>
-	  <a href="./#/interventie1">Reconstructie vagin</a></p>
-	  	  <p><a href="./#/interventie2">Atenuare riduri cu Botox</a></p>
-		  	  <p><a href="./#/interventie3">Atenuare riduri cu acid Hialuronic</a></p>
-			  	   <a href="./#/interventie9">Rejuvenare vaginala</a></p>
-				  	  <p><a href="./#/interventie5">Atenuare cearcane - "Umplerea" cearcanelor</a></p>
-					  	  <p><a href="./#/interventie6">Implant mamar</a></p>
-						  	  <p><a href="./#/interventie7">Lipofilling</a></p>
-							  	  <p><a href="./#/interventie8">Micsorare labii</a></p>
-								  
-	 
-	  </div>
+	  <p><a href="./#/interventie1">Reconstructie vagin</a></p>
+	  <p><a href="./#/interventie2">Atenuare riduri cu Botox</a></p>
+	  <p><a href="./#/interventie3">Atenuare riduri cu acid Hialuronic</a></p>
+	  <p><a href="./#/interventie5">Atenuare cearcane - "Umplerea" cearcanelor</a></p>
+	  <p><a href="./#/interventie6">Implant mamar</a></p>
+	  <p><a href="./#/interventie7">Lipofilling</a></p>
+	  <p><a href="./#/interventie8">Micsorare labii</a></p>
+	  <p><a href="./#/interventie9">Rejuvenare vaginala</a></p>	
+</p>	  
+</div>
 </div>
   </div> 
   </div>
+<div class="container">
+  <div class="wrapper">
+    <ul id="sb-slider" class="sb-slider">
+      		<?php
+			$directory = "../../img_interventii/marire_buze/";
+			$images = glob($directory . "*.jpg");
+			foreach($images as $image)
+			{
+			  echo '<li><img src="'.$image.'" alt="image1" style="width:100%;height:50%;"/></a><div class="sb-description"><h3>Argentina Vidrascu</h3></div></li>';
+			}
+?>
+   </ul>	
+<div id="shadow" class="shadow"></div>
+    <div id="nav-arrows" class="nav-arrows">
+      <a href="#">Next</a>
+      <a href="#">Previous</a>
+</div>		
+</div>
+</div>
+
+<script src='js/slicebox.js'></script>
+<script src="js/index.js"></script>
+	    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src='http://tympanus.net/Development/Slicebox/js/jquery.slicebox.js'></script>
 </section>
 <!--Aboutus--> 
+
+

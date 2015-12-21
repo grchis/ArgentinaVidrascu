@@ -160,7 +160,7 @@
         </div>
         <div data-u="slides" style="cursor: default; position: fixed; top: 0px; left: 0px; width: 809px; height: 150px; overflow: hidden;">
       		<?php
-			$directory = "partials/tip_nas/img/banner/";
+			$directory = "img/banner/";
 			$images = glob($directory . "*.jpg");
 			foreach($images as $image)
 			{

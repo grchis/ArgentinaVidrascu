@@ -1,4 +1,3 @@
-
 <section id="aboutUs"><!--Aboutus-->
 <div class="inner_wrapper">
   <div class="container">
@@ -21,7 +20,7 @@
   <div class="wrapper">
     <ul id="sb-slider" class="sb-slider">
       		<?php
-			$directory = "img/incovoiat/";
+			$directory = "../../img/incovoiat/";
 			$images = glob($directory . "*.jpg");
 			foreach($images as $image)
 			{

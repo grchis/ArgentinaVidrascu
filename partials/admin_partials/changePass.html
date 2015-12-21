@@ -1,14 +1,30 @@
-﻿<section id="aboutUs"><!--Aboutus-->
+﻿<style>
+#logoutButton{
+margin-right:10%;
+}
+#backButton{
+margin-left:10%;
+}
+</style>
+<section id="aboutUs"><!--Aboutus-->
 
+<div style=" width:100%;height:7%;"ng-controller="loginController">
+<button id="logoutButton" style="float:right;" class="btn"ng-click="logout()">Logout</button>
+<button id="backButton" onclick="goBack();" style="float:left;" class="btn">Back</button>
+</div>
 <div id="changePassword" ng-controller="loginController">
 				<center>
-					<input type="password" style="width:25%;" class="form-control" placeholder="Old password" ng-model="changePasswordInfo.oldPassword" placeholder="password" required />
-					<input type="password" style="width:25%;" class="form-control" placeholder="New password" ng-model="changePasswordInfo.newPassword" placeholder="password" required />
-					<input type="password" style="width:25%;" class="form-control" placeholder="Confirm new password" ng-model="changePasswordInfo.confirmPassword" placeholder="password" required /><br/>
+					<input type="password" style="width:40%;" class="form-control" placeholder="Old password" ng-model="changePasswordInfo.oldPassword" placeholder="password" required />
+					<input type="password" style="width:40%;" class="form-control" placeholder="New password" ng-model="changePasswordInfo.newPassword" placeholder="password" required />
+					<input type="password" style="width:40%;" class="form-control" placeholder="Confirm new password" ng-model="changePasswordInfo.confirmPassword" placeholder="password" required /><br/>
 					<button id="changePasswordButton" class="btn" ng-click="changePassword()">Change Password</button>
 				</center>
 			</div>
 
 
 </section>
-		
+<script>
+function goBack() {
+window.location.href="./#/admin";
+}		
+</script>

@@ -20,7 +20,7 @@
   <div class="wrapper">
     <ul id="sb-slider" class="sb-slider">
       		<?php
-			$directory = "img/posttraumatic/";
+			$directory = "../../img/posttraumatic/";
 			$images = glob($directory . "*.jpg");
 			foreach($images as $image)
 			{
