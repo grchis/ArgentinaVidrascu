@@ -175,7 +175,7 @@
 <footer class="footer_wrapper" id="contact">
    <div class="container">
     <div class="footer_bottom">
-	<span style="align:center;"><a href="http://www.chirurgieesteticacluj.ro">www.chirurgieesteticacluj.ro</a></span>
+	<span style="align:center;">Argentina Vidrascu</span>
 	</div>
   </div>
 </footer>
