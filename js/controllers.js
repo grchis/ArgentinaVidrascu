@@ -109,7 +109,6 @@ angular.module('Rinoplastie.controllers', ['ngCookies'])
 	$scope.banner;
 	$scope.gogol;
 	$scope.incovoiat;
-	$scope.lung;
 	$scope.posttraumatic;
 	$scope.reoperat;
 	
@@ -155,7 +154,6 @@ angular.module('Rinoplastie.controllers', ['ngCookies'])
 		$scope.getPhotosByType('banner');
 		$scope.getPhotosByType('gogol');
 		$scope.getPhotosByType('incovoiat');
-		$scope.getPhotosByType('lung');
 		$scope.getPhotosByType('posttraumatic');
 		$scope.getPhotosByType('reoperat');
 	};

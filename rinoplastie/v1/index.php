@@ -269,17 +269,17 @@ $app->post('/upload', 'authenticate', function () {
 	$response = array();
 	$invalid = false;
 	$response["message"] = "";
-    if (!isset($_FILES['before'])) {
+    if (!isset($_REQUEST['type'])) {
+		$response["message"] = $response["message"] . "Image type not selected.";
+        $invalid = true;
+    }
+	if (!isset($_FILES['before'])) {
 		$response["message"] = "No 'before' file selected for upload.";
         $invalid = true;
     }
-	if (!isset($_FILES['after'])) {
+	if ($_REQUEST['type'] != 'banner' && !isset($_FILES['after'])) {
 		$response["message"] = $response["message"] . "No 'after' file selected for upload.";
 		$invalid = true;
-    }
-	if (!isset($_REQUEST['type'])) {
-		$response["message"] = $response["message"] . "Image type not selected.";
-        $invalid = true;
     }
 	if ($invalid) {
 		$response["error"] = true;
@@ -288,10 +288,20 @@ $app->post('/upload', 'authenticate', function () {
 	}
 
 	$files = array();
-    array_push($files, $_FILES['before'], $_FILES['after']);
-	
+	if (isset($_FILES['before'])) {
+		array_push($files, $_FILES['before']);
+	}
+	if (isset($_FILES['after'])) {
+		array_push($files, $_FILES['after']);
+	}
 	try {
-		merge_images($files[0]['tmp_name'], $files[1]['tmp_name'], $_REQUEST['type']);
+		if($_REQUEST['type'] == 'banner') {
+			$name = uniqid('banner-'.date('Ymdhis').'-');
+			$save_path = '../../img/banner/' . $name . '.jpg';
+			move_uploaded_file($_FILES['before']['tmp_name'], $save_path);
+		} else {
+			merge_images($_FILES['before']['tmp_name'], $_FILES['after']['tmp_name'], $_REQUEST['type']);
+		}
 	}
 	catch (Exception $ex){
 		$response['message'] = $ex->getMessage();
@@ -331,7 +341,7 @@ function merge_images($img1_path, $img2_path, $img_type) {
 	if( $SAVE_AS_FILE ){
 		$name = uniqid($img_type.'-'.date('Ymdhis').'-');
 		$save_path = '../../img/' . $img_type . "/" . $name . '.jpg';
-		imagejpeg($merged_image,$save_path);
+		imagejpeg($merged_image, $save_path);
 	} else {
 		header('Content-Type: image/jpeg');
 		imagejpeg($merged_image);
