@@ -24,13 +24,12 @@
     <script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
     <script type="text/javascript" src="js/jquery.isotope.js"></script>
     <script type="text/javascript" src="js/jssor.slider.min.js"></script>
- <script src="http://s.codepen.io/assets/libs/modernizr.js" type="text/javascript"></script>
-   <link rel='stylesheet prefetch' href='http://tympanus.net/Development/Slicebox/css/demo.css'>
+ <script src="js/modernizr.js" type="text/javascript"></script>
+   <link rel='stylesheet prefetch' href='css/demo.css'>
     <link rel="stylesheet" href="css/style.css">
     <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 <script src='js/slicebox.js'></script>
 <script src="js/index.js"></script>
-<script src='http://tympanus.net/Development/Slicebox/js/jquery.slicebox.js'></script>
 </head>
 
 <body>

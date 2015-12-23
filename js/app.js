@@ -117,7 +117,9 @@ angular.module('RinoplastieApp', [ 'Rinoplastie.controllers', 'ngRoute', 'pascal
 			}).when("/oferte", {
 				templateUrl : "partials/oferte.php",
 				controller : "adminController"
-			}).otherwise({
+			}).when("/consultatie", {
+				templateUrl : "partials/consultatie.php",
+				}).otherwise({
 				templateUrl : "partials/home.html"
 			});
 

@@ -1020,7 +1020,7 @@ transition: all .25s ease;
 .nav-arrows a {
 	width: 42px;
 	height: 42px;
-	background: #cbbfae url(http://tympanus.net/Development/Slicebox/images/nav.png) no-repeat top left;
+	background: #cbbfae url(../img/nav.png) no-repeat top left;
 	position: absolute;
 	top: 50%;
 	left: 2px;
@@ -1291,7 +1291,7 @@ padding-top: 18px;
 .nav-arrows a {
 	width: 42px;
 	height: 42px;
-	background: #cbbfae url(http://tympanus.net/Development/Slicebox/images/nav.png) no-repeat top left;
+	background: #cbbfae url() no-repeat top left;
 	position: absolute;
 	top: 50%;
 	left: 2px;
