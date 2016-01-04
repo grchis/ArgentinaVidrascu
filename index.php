@@ -2,6 +2,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, maximum-scale=1">
+    <meta name="keywords" lang="RO" content="rinoplastie, cluj, chirurgie estetica, argentina vidrascu, vidrascu, operare nas, nas lung, nas reoperat, nasul lui gogol, nas incovoiat, nas posttraumatic">
+    <meta name="keywords" lang="EN" content="rhinoplasty, cluj, surgery, argentina vidrascu, vidrascu, nose surgery">
     <title>Rinoplastie Cluj</title>
     <script type="text/javascript" src="js/wow.js"></script>
     <script type="text/javascript" src="js/custom.js"></script>
@@ -24,8 +26,8 @@
     <script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
     <script type="text/javascript" src="js/jquery.isotope.js"></script>
     <script type="text/javascript" src="js/jssor.slider.min.js"></script>
-	<script src="js/modernizr.js" type="text/javascript"></script>
-	<link rel='stylesheet prefetch' href='css/demo.css'>
+    <script src="js/modernizr.js" type="text/javascript"></script>
+    <link rel='stylesheet prefetch' href='css/demo.css'>
     <link rel="stylesheet" href="css/style.css">
     <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 <script src='js/slicebox.js'></script>
@@ -39,7 +41,7 @@
             <div class="header_box">
                 <nav class="navbar navbar-inverse" role="navigation">
                     <div class="navbar-header">
-						<img src="/logo/E-mail_Logo_2.jpg" height="90em" width="110em" data-toggle="collapse"></img>
+                        <img src="/logo/E-mail_Logo_2.jpg" height="90em" width="110em" data-toggle="collapse"></img>
                         <button type="button" id="nav-toggle" class="navbar-toggle" data-toggle="collapse" data-target="#main-nav"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
                     </div>
                     <div id="main-nav" class="collapse navbar-collapse navStyle">
@@ -55,10 +57,10 @@
                     </div>
                 </nav>
             </div>
-			<div ng-controller="translateController" style="float:right;">
-				<button style='background-color:transparent;width:20px;height:11px; background-image:url(../img/icon_ro.gif) ; background-repeat: no-repeat;color: transparent;"'ng-click="changeLanguage('ro')" translate="RO"></button>
-				<button style='background-color:transparent; width:20px;height:11px;background-image:url(../img/icon_en.gif) ; background-repeat: no-repeat;color: transparent;"' ng-click="changeLanguage('en')" translate="EN"></button>
-			</div>
+            <div ng-controller="translateController" style="float:right;">
+                <button style='background-color:transparent;width:20px;height:11px; background-image:url(../img/icon_ro.gif) ; background-repeat: no-repeat;color: transparent;"'ng-click="changeLanguage('ro')" translate="RO"></button>
+                <button style='background-color:transparent; width:20px;height:11px;background-image:url(../img/icon_en.gif) ; background-repeat: no-repeat;color: transparent;"' ng-click="changeLanguage('en')" translate="EN"></button>
+            </div>
         </div>
 </header>
 <!--Header_section--> 
@@ -146,7 +148,7 @@
         .jssora03l.jssora03ldn {
             background-position: -243px -33px;
         }
-		
+        
         .jssora03r.jssora03rdn {
             background-position: -303px -33px;
         }
@@ -159,13 +161,13 @@
             <div style="position:absolute;display:block;background:url('img/loading.gif') no-repeat center center;top:0px;left:0px;width:100%;height:100%;"></div>
         </div>
         <div data-u="slides" style="cursor: default; position: fixed; top: 0px; left: 0px; width: 809px; height: 150px; overflow: hidden;">
-      		<?php
-			$directory = "img/banner/";
-			$images = glob($directory . "*.jpg");
-			foreach($images as $image)
-			{
-			  echo ' <div style="display: none;"><img/banner data-u="image" src="'.$image.'" alt="image1" style="width:100%;height:50%;"/></div>';
-			}
+            <?php
+            $directory = "img/banner/";
+            $images = glob($directory . "*.jpg");
+            foreach($images as $image)
+            {
+              echo ' <div style="display: none;"><img/banner data-u="image" src="'.$image.'" alt="image1" style="width:100%;height:50%;"/></div>';
+            }
 ?>
 </div>
            </div>
@@ -174,8 +176,8 @@
 <footer class="footer_wrapper" id="contact">
    <div class="container">
     <div class="footer_bottom">
-	<span style="align:center;">Argentina Vidrascu</span>
-	</div>
+    <span style="align:center;">Argentina Vidrascu</span>
+    </div>
   </div>
 </footer>
   </body>
