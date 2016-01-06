@@ -1,3 +1,4 @@
+<script src="js/index.js"></script>
 <section id="aboutUs"><!--Aboutus-->
 <div class="inner_wrapper">
   <div class="container">
@@ -32,6 +33,7 @@ chirurgicale poate avea loc si mai tarziu.</p>
  <div class=" col-lg-4 col-md-4 col-sm-4 col-xs-12 pull-right">
  <p>
 	  <p><strong>Citeste mai mult despre: </strong></p>
+	  <i>
 	  <p><a href="./#/interventie2">Atenuare riduri cu Botox</a></p>
 	  <p><a href="./#/interventie3">Atenuare riduri cu acid Hialuronic</a></p>
 	  <p><a href="./#/interventie4">Marire buze</a></p>
@@ -40,6 +42,7 @@ chirurgicale poate avea loc si mai tarziu.</p>
 	  <p><a href="./#/interventie7">Lipofilling</a></p>
 	  <p><a href="./#/interventie8">Micsorare labii</a></p>
 	  <p><a href="./#/interventie9">Rejuvenare vaginala</a></p>	
+	  </i>
 </p>	  
 </div>
 </div>
@@ -65,10 +68,5 @@ chirurgicale poate avea loc si mai tarziu.</p>
 </div>		
 </div>
 </div>
-
-<script src='js/slicebox.js'></script>
-<script src="js/index.js"></script>
-<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-<script src='http://tympanus.net/Development/Slicebox/js/jquery.slicebox.js'></script>
 </section>
 <!--Aboutus--> 

@@ -176,7 +176,7 @@ angular.module('RinoplastieApp', [ 'Rinoplastie.controllers', 'ngRoute', 'pascal
 		GO_TO_SERVICES: 'Oferte servicii',
 		SURGERY: 'Interventii chirurgicale',
 		ARTICLES: 'Articole',
-		HUMANITARIAN_MISSIONS: 'Misiuni umanitare'
+		HUMANITARIAN_MISSIONS: 'Voluntariat Iordania 2015'
 		
 	 })
 	.translations('en', {
@@ -201,8 +201,7 @@ angular.module('RinoplastieApp', [ 'Rinoplastie.controllers', 'ngRoute', 'pascal
 		GO_TO_SERVICES: 'See our offers',
 		SURGERY: 'Surgery',
 		ARTICLES: 'Articles',
-		HUMANITARIAN_MISSIONS: 'Humanitarian missions'
-		
+		HUMANITARIAN_MISSIONS: 'Volunteer in Jordan 2015'
 	 });
 	 $translateProvider.preferredLanguage('ro');
 });

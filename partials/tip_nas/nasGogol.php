@@ -1,3 +1,4 @@
+<script src="js/index.js"></script>
 <section id="aboutUs"><!--Aboutus-->
 <div class="inner_wrapper">
   <div class="container">
@@ -16,7 +17,8 @@
 
  </div> 
     </div>
-  <div class="container">
+<center>
+  <div style="width:100%;">
   <div class="wrapper">
     <ul id="sb-slider" class="sb-slider">
       		<?php
@@ -24,7 +26,7 @@
 			$images = glob($directory . "*.jpg");
 			foreach($images as $image)
 			{
-			  echo '<li><img src="'.$image.'" alt="image1" style="width:100%;height:50%;"/></a><div class="sb-description"><h3>Argentina Vidrascu</h3></div></li>';
+			  echo '<li><img src="'.$image.'" alt="image1" style="width:100%;height:40%;"/></a></li>';
 			}
 ?>
    </ul>	
@@ -35,9 +37,5 @@
 </div>		
 </div>
 </div>
-
-<script src='js/slicebox.js'></script>
-<script src="js/index.js"></script>
-	    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-<script src='http://tympanus.net/Development/Slicebox/js/jquery.slicebox.js'></script>
+</center>
 </section>
