@@ -329,6 +329,7 @@ function merge_images($img1_path, $img2_path, $img_type) {
 	imagealphablending($merged_image, false);
 	imagesavealpha($merged_image, true);
 
+	ini_set('memory_limit', '-1');
 	$img1 = imagecreatefromjpeg($img1_path);
 	$img2 = imagecreatefromjpeg($img2_path);
 
