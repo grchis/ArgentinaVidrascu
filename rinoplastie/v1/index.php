@@ -296,9 +296,7 @@ $app->post('/upload', 'authenticate', function () {
 	}
 	try {
 		if($_REQUEST['type'] == 'banner') {
-			$name = uniqid('banner-'.date('Ymdhis').'-');
-			$save_path = '../../img/banner/' . $name . '.jpg';
-			move_uploaded_file($_FILES['before']['tmp_name'], $save_path);
+			upload_banner_image($_FILES['before']['tmp_name']);
 		} else {
 			merge_images($_FILES['before']['tmp_name'], $_FILES['after']['tmp_name'], $_REQUEST['type']);
 		}
@@ -315,6 +313,23 @@ $app->post('/upload', 'authenticate', function () {
 	echoRespnse(200, $response);
 });
 
+function upload_banner_image($image_path) {
+	list($img_width, $img_height) = getimagesize($image_path);
+	$max_height = 800;
+	$proportion = $img_height / $max_height;
+	$img_resized_width = $img_width / $proportion;
+	
+	ini_set('memory_limit', '-1');
+	$image = imagecreatefromjpeg($image_path);
+	
+	$dest_image = imagecreatetruecolor($img_resized_width, $max_height);
+	imagecopyresampled($dest_image, $image, 0, 0, 0, 0, $img_resized_width, $max_height, $img_width, $img_height);
+	
+	$name = uniqid('banner-'.date('Ymdhis').'-');
+	$save_path = '../../img/banner/' . $name . '.jpg';
+	imagejpeg($dest_image, $save_path);
+}
+
 function merge_images($img1_path, $img2_path, $img_type) {
 
 	list($img1_width, $img1_height) = getimagesize($img1_path);
@@ -322,7 +337,6 @@ function merge_images($img1_path, $img2_path, $img_type) {
 
 	$max_height = 800;
 	
-	$highest_height = $img1_height > $img2_height ? $img1_height : $img2_height;
 	$proportion1 = $img1_height / $max_height;
 	$proportion2 = $img2_height / $max_height;
 	
