@@ -31,7 +31,7 @@
             <div class="header_box">
                 <nav class="navbar navbar-inverse" role="navigation">
                     <div class="navbar-header">
-                        <img src="/logo/E-mail_Logo_2.jpg" height="90em" width="110em" data-toggle="collapse"></img>
+                       <a href="./#/home"> <img src="/logo/E-mail_Logo_2.jpg" height="90em" width="110em" data-toggle="collapse"></img></a>
                         <button type="button" id="nav-toggle" class="navbar-toggle" data-toggle="collapse" data-target="#main-nav"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
                     </div>
                     <div id="main-nav" class="collapse navbar-collapse navStyle">
