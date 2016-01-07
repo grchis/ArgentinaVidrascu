@@ -53,7 +53,7 @@ angular.module('Rinoplastie.controllers', ['ngCookies'])
  
 .factory('authService', ['$http', '$cookies', function($http, $cookies) {
 	
-	var serviceBase = '/rinoplastie/v1';
+	var serviceBase = '/rinoplastie.php';
    
 	this.login = function(loginInfo) {
 		var request = $http.post(serviceBase + '/login', loginInfo)
@@ -163,7 +163,7 @@ angular.module('Rinoplastie.controllers', ['ngCookies'])
  
 .factory('photoService', ['$http', function ($http) {
 	
-	var serviceBase = '/rinoplastie/v1';
+	var serviceBase = '/rinoplastie.php';
 	
     this.upload = function(photo, authToken){
         var fd = new FormData();

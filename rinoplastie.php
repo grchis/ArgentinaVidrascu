@@ -1,8 +1,8 @@
 <?php
  
-require_once '../include/DbHandler.php';
-require_once '../include/PassHash.php';
-require '.././libs/Slim/Slim.php';
+require_once 'rinoplastie/include/DbHandler.php';
+require_once 'rinoplastie/include/PassHash.php';
+require 'rinoplastie/libs/Slim/Slim.php';
  
 \Slim\Slim::registerAutoloader();
  
@@ -10,7 +10,7 @@ $app = new \Slim\Slim();
  
 // User id from db - Global Variable
 $user_id = NULL;
-$images_folder = '../../img';
+$images_folder = 'img';
  
 /**
  * Verifying required params posted or not
@@ -326,7 +326,7 @@ function upload_banner_image($image_path) {
 	imagecopyresampled($dest_image, $image, 0, 0, 0, 0, $img_resized_width, $max_height, $img_width, $img_height);
 	
 	$name = uniqid('banner-'.date('Ymdhis').'-');
-	$save_path = '../../img/banner/' . $name . '.jpg';
+	$save_path = 'img/banner/' . $name . '.jpg';
 	imagejpeg($dest_image, $save_path);
 }
 
@@ -361,7 +361,7 @@ function merge_images($img1_path, $img2_path, $img_type) {
 	$SAVE_AS_FILE = true;
 	if( $SAVE_AS_FILE ){
 		$name = uniqid($img_type.'-'.date('Ymdhis').'-');
-		$save_path = '../../img/' . $img_type . "/" . $name . '.jpg';
+		$save_path = 'img/' . $img_type . "/" . $name . '.jpg';
 		imagejpeg($merged_image, $save_path);
 	} else {
 		header('Content-Type: image/jpeg');
