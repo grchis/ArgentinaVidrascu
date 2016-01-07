@@ -320,11 +320,17 @@ function merge_images($img1_path, $img2_path, $img_type) {
 	list($img1_width, $img1_height) = getimagesize($img1_path);
 	list($img2_width, $img2_height) = getimagesize($img2_path);
 
-	$merged_width  = $img1_width + $img2_width;
-	//get highest
-	$merged_height = $img1_height > $img2_height ? $img1_height : $img2_height;
+	$max_height = 800;
+	
+	$highest_height = $img1_height > $img2_height ? $img1_height : $img2_height;
+	$proportion1 = $img1_height / $max_height;
+	$proportion2 = $img2_height / $max_height;
+	
+	$img1_resized_width = $img1_width / $proportion1;
+	$img2_resized_width = $img2_width / $proportion2;
 
-	$merged_image = imagecreatetruecolor($merged_width, $merged_height);
+	$merged_width = $img1_resized_width + $img2_resized_width;
+	$merged_image = imagecreatetruecolor($merged_width, $max_height);
 
 	imagealphablending($merged_image, false);
 	imagesavealpha($merged_image, true);
@@ -333,9 +339,9 @@ function merge_images($img1_path, $img2_path, $img_type) {
 	$img1 = imagecreatefromjpeg($img1_path);
 	$img2 = imagecreatefromjpeg($img2_path);
 
-	imagecopy($merged_image, $img1, 0, 0, 0, 0, $img1_width, $img1_height);
+	imagecopyresampled($merged_image, $img1, 0, 0, 0, 0, $img1_resized_width, $max_height, $img1_width, $img1_height);
 	//place at right side of $img1
-	imagecopy($merged_image, $img2, $img1_width, 0, 0, 0, $img2_width, $img2_height);
+	imagecopyresampled($merged_image, $img2, $img1_resized_width, 0, 0, 0, $img2_resized_width, $max_height, $img2_width, $img2_height);
 
 	//save file or output to broswer
 	$SAVE_AS_FILE = true;
