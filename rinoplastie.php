@@ -1,4 +1,6 @@
 <?php
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
  
 require_once 'rinoplastie/include/DbHandler.php';
 require_once 'rinoplastie/include/PassHash.php';
@@ -11,7 +13,15 @@ $app = new \Slim\Slim();
 // User id from db - Global Variable
 $user_id = NULL;
 $images_folder = 'img';
- 
+
+function getUserAuthorizattionToken($headers){
+	if (isset($headers['Authorization'])){
+		return $headers['Authorization'];
+	} else if(isset($headers['HTTP_AUTHORIZATION'])) {
+		return $headers['HTTP_AUTHORIZATION'];
+	}
+	return false;
+}
 /**
  * Verifying required params posted or not
  */
@@ -160,20 +170,20 @@ $app->get('/logout', 'authenticate', function() {
 	$response = array();
 	$db = new DbHandler();
 
-	$headers = apache_request_headers();
-	$api_key = $headers['Authorization'];
+	$headers = (function_exists('apache_request_headers')) ? apache_request_headers() : $_SERVER;
+	$api_key = getUserAuthorizattionToken($headers);
 	$result = $db->deleteApiKey($api_key);
 	
 	echoRespnse(204, $response);
+
 });
 
 $app->post('/changepassword', 'authenticate', function() use ($app) {
 	// check for required params
 	verifyRequiredParams(array('email', 'oldPassword', 'newPassword', 'confirmPassword'));
 
-	$headers = apache_request_headers();
-	$api_key = $headers['Authorization'];
-	
+	$headers = (function_exists('apache_request_headers')) ? apache_request_headers() : $_SERVER;
+	$api_key = getUserAuthorizattionToken($headers);
 	// reading post params
 	$params = json_decode($app->request()->getBody());
 	$email = $params->email;
@@ -223,18 +233,17 @@ $app->post('/changepassword', 'authenticate', function() use ($app) {
  */
 function authenticate(\Slim\Route $route) {
     // Getting request headers
-    $headers = apache_request_headers();
+    $headers = (function_exists('apache_request_headers')) ? apache_request_headers() : $_SERVER;
+	//echo "<pre>"; print_r($_SERVER);die;
     $response = array();
     $app = \Slim\Slim::getInstance();
-	//echo '<pre>';
-	//var_dump($headers);die;
- 
+
     // Verifying Authorization Header
-    if (isset($headers['Authorization'])) {
+    if (isset($headers['Authorization']) || isset($headers['HTTP_AUTHORIZATION'])) {
         $db = new DbHandler();
  
         // get the api key
-        $api_key = $headers['Authorization'];
+        $api_key = getUserAuthorizattionToken($_SERVER);
 		
         // validating api key
         if (!$db->isValidApiKey($api_key)) {
@@ -257,6 +266,7 @@ function authenticate(\Slim\Route $route) {
         echoRespnse(400, $response);
         $app->stop();
     }
+
 }
 
 /**
