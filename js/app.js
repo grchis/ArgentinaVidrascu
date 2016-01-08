@@ -102,24 +102,35 @@ angular.module('RinoplastieApp', [ 'Rinoplastie.controllers', 'ngRoute', 'pascal
 			}).when("/admin", {
 				templateUrl : "partials/admin.html",
 				controller : "adminController"
-			}).when("/all", {
+			}).when("/admin/images", {
 				templateUrl : "partials/admin_partials/all_photos.html",
 				controller : "adminController"
-			}).when("/upload", {
+			}).when("/admin/images/banner", {
+				templateUrl : "partials/admin_partials/banner.html",
+				controller : "adminController"
+			}).when("/admin/images/gogol", {
+				templateUrl : "partials/admin_partials/gogol.html",
+				controller : "adminController"
+			}).when("/admin/images/reoperat", {
+				templateUrl : "partials/admin_partials/reoperat.html",
+				controller : "adminController"
+			}).when("/admin/images/posttraumatic", {
+				templateUrl : "partials/admin_partials/posttraumatic.html",
+				controller : "adminController"
+			}).when("/admin/images/incovoiat", {
+				templateUrl : "partials/admin_partials/incovoiat.html",
+				controller : "adminController"
+			}).when("/admin/upload", {
 				templateUrl : "partials/admin_partials/upload.html",
 				controller : "adminController"
-			}).when("/change", {
+			}).when("/admin/password", {
 				templateUrl : "partials/admin_partials/changePass.html",
 				controller : "adminController"
 			}).when("/misiuni", {
-				templateUrl : "partials/interventii/misiuni_umanitare.php",
-				controller : "adminController"
-			}).when("/oferte", {
-				templateUrl : "partials/oferte.php",
-				controller : "adminController"
+				templateUrl : "partials/interventii/misiuni_umanitare.php"
 			}).when("/consultatie", {
 				templateUrl : "partials/consultatie.php",
-				}).otherwise({
+			}).otherwise({
 				templateUrl : "partials/home.html"
 			});
 
