@@ -1,5 +1,10 @@
 <html ng-app="RinoplastieApp">
 <head>
+<style type="text/css">
+[ng\:cloak], [ng-cloak], .ng-cloak {
+  display: none !important;
+}
+</style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, maximum-scale=1">
     <meta name="keywords" lang="RO" content="rinoplastie, cluj, chirurgie estetica, argentina vidrascu, vidrascu, operare nas, nas lung, nas reoperat, nasul lui gogol, nas incovoiat, nas posttraumatic">
