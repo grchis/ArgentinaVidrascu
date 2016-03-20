@@ -48,6 +48,7 @@
                             <li><a href="./#/indicatii" class="scroll-link">{{'GENERAL_ADVICE' | translate}}</a></li>
                             <li><a href="./#/interviuri" class="scroll-link">{{'MEDIA' | translate}}</a></li>
                             <li><a href="./#/diverse" class="scroll-link">{{'INTERVENTIONS' | translate}}</a></li>
+							<li><a href="./#/consultatie" class="scroll-link">{{'CONSULTATIE' | translate}}</a></li>
                         </ul>
                     </div>
                 </nav>
